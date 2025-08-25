@@ -1,0 +1,86 @@
+@import 'global';
+
+.momentos-section {
+  background: #d6edff;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Arial', sans-serif;
+
+  @include responsive(tablet) {
+    padding: 40px 10px;
+  }
+
+  .titulo {
+    color: #153f91;
+    font-size: 56px;
+    margin-bottom: 17px;
+    font-weight: bold;
+
+    @include responsive(tablet) {
+      font-size: 36px;
+    }
+  }
+
+  .descricao {
+    font-size: 26px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    font-weight: 600;
+
+    .destaque {
+      color: #ff6b00;
+      font-weight: bold;
+    }
+
+    @include responsive(tablet) {
+      font-size: 18px;
+    }
+  }
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;  
+  gap: 20px;
+  padding: 20px;
+  background: #eef7ff;
+  border-radius: 15px;
+  box-shadow: 0 8px 10px $shadow-light;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .galeria-img {
+    width: calc((100% - 40px * 2) / 3); 
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+
+  .btn-participar {
+    margin-top: 40px;
+    background-color: #ff6b00;
+    color: $white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #e75e00;
+      transform: translateY(-2px);
+    }
+
+    @include responsive(tablet) {
+      font-size: 14px;
+      padding: 12px 30px;
+    }
+  }
+}

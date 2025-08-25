@@ -1,0 +1,87 @@
+$primary-color: #295596;
+$secondary-color: #1A2876;
+$accent-color: #E05A2B;
+$text-dark: #1b3b70;
+$text-light: #444;
+$white: #fff;
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-medium: rgba(0, 0, 0, 0.15);
+$shadow-dark: rgba(0, 0, 0, 0.2);
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin card-hover {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px $shadow-medium;
+  }
+}
+
+@mixin button-hover {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) { @content; }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 480px) { @content; }
+  }
+}
+
+.pagina-app {
+  background: linear-gradient(#E0F5FA, #B3D2FF);
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.highlight {
+  font-weight: bold;
+  color: $accent-color;
+}
+
+.linha-divisoria {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, $accent-color, #e64a19);
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.p-40 {
+  padding: 40px;
+}

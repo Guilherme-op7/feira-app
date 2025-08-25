@@ -1,0 +1,109 @@
+@import 'global';
+
+.Cursos {
+  text-align: center;
+  padding: 80px 20px;
+
+  @include responsive(tablet) {
+    padding: 40px 10px;
+  }
+}
+
+.Cursos h1 {
+  color: $text-dark;
+  font-size: 56px;
+  margin-bottom: 20px;
+
+  @include responsive(tablet) {
+    font-size: 36px;
+  }
+}
+
+.Cursos p {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  color: $text-light;
+  font-size: 24px;
+  font-weight: 600;
+
+  @include responsive(tablet) {
+    font-size: 18px;
+    margin: 0 20px 30px;
+  }
+}
+
+.Quadros-Cursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include responsive(tablet) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.curso-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px $shadow-light;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease;
+  background-color: $white;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px $shadow-medium;
+  }
+}
+
+.Quadros-Cursos img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.Quadros-Cursos h1 {
+  font-size: 1.2rem;
+  color: $text-dark;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.Quadros-Cursos p {
+  color: $text-light;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 8px 0;
+}
+
+.Saber {
+  display: block;
+  margin: 40px auto 20px;
+  padding: 15px 38px;
+  background: $accent-color;
+  color: $white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  @include responsive(tablet) {
+    font-size: 16px;
+    padding: 12px 30px;
+  }
+
+  &:hover {
+    background: #e64a19;
+    transform: translateY(-2px);
+  }
+}

@@ -1,0 +1,136 @@
+@import 'global';
+
+.depoimentos-mom {
+  background: linear-gradient(to bottom,
+      rgba(0, 170, 255, 0) 0%,
+
+      rgba(0, 102, 153, 0.53) 83%
+
+    );
+  height: 100%;
+
+  margin-top: 80px;
+  padding: 60px 20px;
+  text-align: center;
+
+  @include responsive(tablet) {
+    margin-top: 40px;
+    padding: 40px 10px;
+  }
+
+  .depoimentos-text-principal {
+    font-size: 56px;
+    color: #0a2a66;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    @include responsive(tablet) {
+      font-size: 36px;
+    }
+  }
+
+  .depoimentos-text-subprincipal {
+    font-size: 24px;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+
+    @include responsive(tablet) {
+      font-size: 16px;
+    }
+  }
+}
+
+.depoimentos-carousel {
+  position: relative;
+  max-width: 747px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.depoimentos-slide {
+  flex: 1;
+}
+
+.depoimentos1 {
+  background: linear-gradient(to bottom,
+      rgba(41, 85, 150, 0.99) 0%,
+      rgba(13, 27, 48, 1) 87%);
+  height: 88%;
+
+  color: $white;
+  padding: 30px;
+  border-radius: 15px;
+  height: 357px;
+  width: 846px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 8px 20px $shadow-dark;
+  animation: fadeIn 0.5s ease;
+
+  @include responsive(tablet) {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .depoimentos1-imagem {
+    margin-left: -200px;
+    height: 490px;
+    width: 301px;
+  }
+
+  .depoimentos1-conteudo {
+    .depoimentos1-text1 {
+      font-size: 20px;
+      line-height: 1.8;
+      margin-bottom: 80px;
+      text-align: left;
+      margin-left: -26px;
+
+      strong {
+        color: $white;
+        font-weight: bold;
+      }
+
+      @include responsive(tablet) {
+        font-size: 16px;
+      }
+    }
+
+    .depoimentos1-text2 {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 1);
+      margin-left: -74px;
+
+      @include responsive(tablet) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.depoimentos-indicators {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #244f8f8a;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #244F8F;
+}

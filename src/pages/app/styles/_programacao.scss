@@ -1,0 +1,154 @@
+@import 'global';
+
+.Program {
+  text-align: center;
+  padding: 80px 20px;
+
+  @include responsive(tablet) {
+    padding: 40px 10px;
+  }
+}
+
+.program-header h1 {
+  color: $text-dark;
+  margin-bottom: 40px;
+  font-size: 56px;
+
+  @include responsive(tablet) {
+    font-size: 36px;
+  }
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px $shadow-dark;
+  z-index: 10;
+
+  &:hover {
+    background: $white;
+    transform: scale(1.1);
+  }
+
+  @include responsive(tablet) {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+.carousel-slide {
+  flex: 1;
+  min-height: 300px;
+}
+
+.program-card {
+  background: $white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px $shadow-light;
+  text-align: left;
+  animation: fadeIn 0.5s ease;
+
+  @include responsive(tablet) {
+    padding: 20px;
+  }
+}
+
+.program-card h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: $text-dark;
+
+  @include responsive(tablet) {
+    font-size: 24px;
+  }
+}
+
+.program-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.program-card li {
+  margin: 15px 0;
+  color: $text-light;
+  position: relative;
+  padding-left: 25px;
+  font-size: 16px;
+  line-height: 1.4;
+
+  &::before {
+    content: "•";
+    color: $text-dark;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+  }
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.active {
+    background: $accent-color;
+    transform: scale(1.2);
+  }
+
+  &:hover {
+    background: $accent-color;
+  }
+}
+
+.Inscricao2 {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 15px 40px;
+  background: #E05A2BF2;
+  border: none;
+  border-radius: 15px;
+  color: $white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 1px 2px 6px black;
+  font-size: 18px;
+
+  @include responsive(tablet) {
+    font-size: 16px;
+    padding: 12px 30px;
+  }
+
+  &:hover {
+    background: #e64a19;
+    transform: translateY(-2px);
+  }
+}

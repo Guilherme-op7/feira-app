@@ -1,0 +1,120 @@
+@import 'global';
+
+.TL-inicial {
+  text-align: center;
+  background: linear-gradient(to left,
+      $primary-color 0%,
+      $primary-color 12%,
+      $secondary-color 59%,
+      $secondary-color 100%);
+  color: $white;
+  height: 629px;
+
+  @include responsive(tablet) {
+    height: 500px;
+    padding: 0 15px;
+  }
+}
+
+.TL-inicial h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  padding-top: 69px;
+  color: white;
+
+  @include responsive(tablet) {
+    font-size: 36px;
+  }
+
+  @include responsive(mobile) {
+    font-size: 28px;
+  }
+}
+
+.highlight1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: $accent-color;
+}
+
+.TL-inicial p {
+  font-size: 32px;
+  font-weight: bold;
+
+  @include responsive(tablet) {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.conteudo {
+  @include flex-center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bloco {
+  @include flex-center;
+  flex-direction: column;
+}
+
+.b {
+  margin-bottom: 97px;
+  margin-top: 55px;
+}
+
+.botoes-hero {
+  display: flex;
+  gap: 59px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include responsive(tablet) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.TL-inicial button {
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 1px 2px 6px black;
+  padding: 12px 30px;
+
+  @include responsive(tablet) {
+    font-size: 14px;
+    padding: 10px 25px;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.Programing {
+  background: $white;
+  color: $primary-color;
+
+  &:hover {
+    background: #e0e0e0;
+  }
+}
+
+.Inscricao {
+  background: $accent-color;
+  color: $white;
+
+  &:hover {
+    background: $accent-color;
+  }
+}

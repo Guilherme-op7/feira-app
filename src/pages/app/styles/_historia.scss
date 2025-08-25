@@ -1,0 +1,83 @@
+@import 'global';
+
+.history {
+  display: flex;
+  margin: 60px 20px;
+  padding: 40px;
+  gap: 40px;
+  align-items: center;
+
+  @include responsive(tablet) {
+    flex-direction: column;
+    margin: 40px 10px;
+    padding: 20px 10px;
+    gap: 30px;
+  }
+}
+
+
+.left-box {
+  flex: 1;
+}
+
+  .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+.Xavier {
+  width: 635px;
+  height: 591px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.history h2 {
+  color: $primary-color;
+  font-size: 42px;
+  font-weight: 700;
+
+
+  @include responsive(tablet) {
+    font-size: 28px;
+  }
+}
+
+.history p {
+  font-size: 25px;
+  font-weight: medium;
+  line-height: 1.7;
+
+  @include responsive(tablet) {
+    font-size: 18px;
+  }
+}
+
+.history button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: #E05A2BF2;
+  border: none;
+  border-radius: 15px;
+  color: $white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 1px 2px 6px black;
+  font-size: 18px;
+
+  @include responsive(tablet) {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  &:hover {
+    background: #e64a19;
+    transform: translateY(-2px);
+  }
+}

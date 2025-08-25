@@ -1,0 +1,118 @@
+@import 'global';
+
+.rodape {
+  background-color: #244f8f;
+  color: $white;
+  font-family: "Montserrat", Helvetica, sans-serif;
+  padding: 40px 20px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include responsive(tablet) {
+    padding: 30px 15px 15px;
+  }
+}
+
+.conteudo-rodape {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+
+  @include responsive(tablet) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.coluna-rodape {
+  min-width: 220px;
+}
+
+.logo-instituto {
+  max-width: 100px;
+  margin-bottom: 15px;
+}
+
+.titulo-secao {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.linha-divisoria {
+  width: 50px;
+  height: 2px;
+  background-color: $accent-color;
+  margin: 10px 0 15px;
+}
+
+.slogan {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.slogan .destaque {
+  font-weight: 600;
+}
+
+.horario {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.endereco {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.menu-rodape {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-rodape li {
+  margin-bottom: 8px;
+}
+
+.menu-rodape a {
+  color: $white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.instagram,
+.telefone {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.instagram a,
+.telefone a {
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.rodape-final {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding-top: 15px;
+  margin-top: 30px;
+}
+
+.direitos-autorais {
+  font-size: 13px;
+}

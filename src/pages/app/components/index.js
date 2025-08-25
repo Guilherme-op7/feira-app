@@ -1,0 +1,14 @@
+export { default as Header } from './Header';
+export { default as Hero } from './Hero';
+export { default as Instituto } from './Instituto';
+export { default as Historia } from './Historia';
+export { default as Programacao } from './Programacao';
+export { default as Cursos } from './Cursos';
+export { default as Estrutura } from './Estrutura';
+export { default as Participar } from './Participar';
+export { default as Depoimentos } from './Depoimentos';
+export { default as Momentos } from './Momentos';
+export { default as ComoChegar } from './ComoChegar';
+export { default as Parceiros} from './Parceiros';
+export { default as Footer } from './Footer';
+export { default as SaberMais } from './SaberMais';

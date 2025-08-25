@@ -1,0 +1,48 @@
+@import 'global';
+
+.carousel-container {
+    @include flex-center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 53px;
+    font-weight: 700;
+    color: #244F8F;
+    margin-bottom: 12px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+}
+
+.carousel-img {
+    width: 304px;
+    height: 181px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: #007bff;
+}
