@@ -1,4 +1,47 @@
+import { useState } from "react";
+import axios from "axios";
+
 export function ComoChegar() {
+  const [FormularioD, setFormularioD] = useState({
+    nome: "",
+    telefone: "",
+    email: "",
+    escola: "",
+    curso: "",
+    chegada: "",
+    comoSoube: "",
+    escolaridade: "",
+    exAluno: "",
+  });
+
+  const MudarCampo = (e) => {
+    const { name, value } = e.target;
+    setFormularioD((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const EnviarFormulario = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("https://backend-leitor-feira.onrender.com/inscricoes", FormularioD);
+      alert("Inscrição enviada com sucesso!");
+      setFormularioD({
+        nome: "",
+        telefone: "",
+        email: "",
+        escola: "",
+        curso: "",
+        chegada: "",
+        comoSoube: "",
+        escolaridade: "",
+        exAluno: "",
+      });
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+      alert("Erro ao enviar inscrição.");
+    }
+  };
+
   return (
     <div className="comoChegar">
       <h1 className="comoChegar__titulo">Como Chegar</h1>
@@ -22,27 +65,39 @@ export function ComoChegar() {
 
           <div className="comoChegar__formulario">
             <h4>Formulário de <span>Inscrição</span></h4>
-            <form>
+            <form onSubmit={EnviarFormulario}>
               <label>Nome Completo*</label>
-              <input type="text" placeholder="Nome Completo*" required />
-              <label>Telefone</label>
-              <input type="email" placeholder="Email*" required />
-              <label>E-mail</label>
-              <input type="text" placeholder="Nome da Escola*" required />
+              <input type="text" name="nome" value={FormularioD.nome} onChange={MudarCampo} placeholder="Nome Completo*" required />
+
+              <label>Telefone*</label>
+              <input type="text" name="telefone" value={FormularioD.telefone} onChange={MudarCampo} placeholder="Telefone*" required />
+
+              <label>E-mail*</label>
+              <input type="email" name="email" value={FormularioD.email} onChange={MudarCampo} placeholder="Email*" required />
+
+              <label>Nome da Escola*</label>
+              <input type="text" name="escola" value={FormularioD.escola} onChange={MudarCampo} placeholder="Nome da Escola*" required />
+
               <label>Interesse em algum curso?</label>
-              <input type="text" placeholder="Série / Ano*" required />
-              <label>Previsão de chegada à feira</label>
-              <input type="text" placeholder="Telefone*" required />
-              <label>Como ficou sabendo da feira?</label>
-              <input type="text" placeholder="Nome Completo*" required />
-              <label>Escolaridade</label>
-              <input type="email" placeholder="Email*" required />
-              <label>Ja foi aluno do frei?*</label>
-              <select name="" id="">
-                <option value="">sim</option>
-                <option value="">nao</option>
-                <option value="">pretendo</option>
+              <input type="text" name="curso" value={FormularioD.curso} onChange={MudarCampo} placeholder="Curso de interesse" />
+
+              <label>Previsão de chegada à feira*</label>
+              <input type="text" name="chegada" value={FormularioD.chegada} onChange={MudarCampo} placeholder="Horário de Chegada" required />
+
+              <label>Como ficou sabendo da feira?*</label>
+              <input type="text" name="comoSoube" value={FormularioD.comoSoube} onChange={MudarCampo} placeholder="Ex: redes sociais, amigos..." required />
+
+              <label>Escolaridade*</label>
+              <input type="text" name="escolaridade" value={FormularioD.escolaridade} onChange={MudarCampo} placeholder="Ex: Ensino Médio" required />
+
+              <label>Já foi aluno do Frei?*</label>
+              <select name="exAluno" value={FormularioD.exAluno} onChange={MudarCampo} required>
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+                <option value="pretendo">Pretendo</option>
               </select>
+
               <button type="submit">Quero Participar</button>
             </form>
           </div>
@@ -59,8 +114,6 @@ export function ComoChegar() {
             <p>Zona Sul</p>
           </div>
 
-
-
           <div className="comoChegar__beneficios">
             <h4>O que você vai ganhar:</h4>
             <ul>
@@ -72,11 +125,9 @@ export function ComoChegar() {
             </ul>
           </div>
         </div>
-
-
       </div>
     </div>
   );
-};
+}
 
 export default ComoChegar;
