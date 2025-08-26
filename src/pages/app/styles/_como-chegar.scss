@@ -63,17 +63,45 @@
     margin-bottom: 87px;
   
     h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
+      font-size: 34px;
+      margin-bottom: 5px;
     }
-
-    p {
-      margin: 5px 0;
+    header {
+      text-align: center;
+    }
+    header p {
+      font-size: 22px;
+      margin: 5px 0px 40px 0px;
     }
 
     strong {
       font-weight: bold;
     }
+
+    section {
+      display: flex;
+      font-size: 17px;
+      text-align: center;
+      gap: 20px;
+    }
+    .lado_esquerdo {
+      margin-left: 30px;
+    }
+    .lado_direito {
+      margin-top: 10px;
+    }
+  }
+  .parte_inferior {
+    margin-top: 50px;
+  }
+  .semantico {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .semantico2 {
+    font-size: 16px;
+    font-weight: 500;
   }
 
   &__formulario {

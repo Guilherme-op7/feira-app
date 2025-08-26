@@ -105,13 +105,30 @@ export function ComoChegar() {
 
         <div className="bloco2">
           <div className="comoChegar__infoCard">
+           
+            <header>
+            <img className="iconeSuperior" src="/assets/images/iconSuperior.png" alt="Icone de maleta eu acho"/>
             <h3>Feira de Profissões 2025</h3>
-            <p>Evento gratuito e aberto ao público</p>
+            <p className="subtitulo">Evento gratuito e aberto ao público</p>
+            </header>
+
+            <section>
+            <div className="lado_esquerdo">
+            <img src="/assets/images/iconRelogio.png" alt ="icone de relogio laranja"/>
             <p><strong>27 de Setembro</strong></p>
             <p>das 9h às 16h</p>
+            </div>
+            <div className="lado_direito">
+            <img src="/assets/images/iconMarcador.png"/>
             <p><strong>Instituto Social Nossa Senhora de Fátima</strong></p>
-            <p>#</p>
             <p>Zona Sul</p>
+            </div>
+            </section>
+
+            <div className="parte_inferior">
+            <p className="semantico"> Local</p>
+            <p className="semantico2">Instituto Social Nossa Senhora de Fátima, Av. Cel. Octaviano de Freitas Costa, 463 Veleiros - São Paulo - SP 04773-000</p>
+            </div>
           </div>
 
           <div className="comoChegar__beneficios">
