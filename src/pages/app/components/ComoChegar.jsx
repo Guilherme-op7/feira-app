@@ -49,7 +49,7 @@ export function ComoChegar() {
         Todas as informações que você precisa para participar da feira
       </h2>
 
-      <div className="comoChegar__grid">
+      <div className="comoChegar__rei">
         <div className="bloco1">
           <div className="comoChegar__mapa">
             <iframe

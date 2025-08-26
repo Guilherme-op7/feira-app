@@ -18,12 +18,14 @@
 .conteudo-rodape {
   max-width: 100%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  gap: 70px;
 
   @include responsive(tablet) {
-    grid-template-columns: 1fr;
+    flex-direction: column; 
     gap: 20px;
   }
 }
@@ -31,6 +33,21 @@
 .coluna-rodape {
   min-width: 220px;
 }
+
+
+.coluna-rodape2 {
+  min-width: 210px;
+  display: flex;
+  align-items: center;
+  gap: 55px; 
+  margin-bottom: 40px;
+}
+
+.logo-instituto {
+  max-width: 80px; 
+  margin-bottom: 0; 
+}
+
 
 .logo-instituto {
   max-width: 100px;
@@ -72,7 +89,9 @@
 .menu-rodape {
   list-style: none;
   padding: 0;
+  padding-top: 6  px;
   margin: 0;
+
 }
 
 .menu-rodape li {

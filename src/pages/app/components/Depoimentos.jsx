@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import '../styles/_depoimentos.scss'
 export function Depoimentos() {
   const [currentDepoimento, setCurrentDepoimento] = useState(0);
 
@@ -9,7 +9,19 @@ export function Depoimentos() {
       curso: "Cursos de Informática 2005 e Inglês 2006",
       foto: "/assets/images/bruno.png",
       texto: "Atualmente, além de executivo de TI, sou professor no Instituto onde nossa MISSÃO é EDUCAR, PREPARAR OS JOVENS PARA O MERCADO DE TRABALHO com habilidades técnicas, humanas e conceituais."
-    }
+    },
+    {
+      nome: "Bruno de Oliveira",
+      curso: "Cursos de Informática 2005 e Inglês 2006",
+      foto: "/assets/images/bruno.png",
+      texto: "Atualmente, além de executivo de TI, sou professor no Instituto onde nossa MISSÃO é EDUCAR, PREPARAR OS JOVENS PARA O MERCADO DE TRABALHO com habilidades técnicas, humanas e conceituais."
+    },
+    {
+      nome: "Bruno de Oliveira",
+      curso: "Cursos de Informática 2005 e Inglês 2006",
+      foto: "/assets/images/bruno.png",
+      texto: "Atualmente, além de executivo de TI, sou professor no Instituto onde nossa MISSÃO é EDUCAR, PREPARAR OS JOVENS PARA O MERCADO DE TRABALHO com habilidades técnicas, humanas e conceituais."
+    },
   ];
 
   useEffect(() => {

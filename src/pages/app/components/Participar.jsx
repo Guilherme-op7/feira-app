@@ -1,70 +1,74 @@
-import '../styles/_participar.scss'
-
+import '../styles/_participar.scss';
+import { Mic, Building, Lightbulb } from "lucide-react";
 export function Participar() {
+  const benefits = [
+    {
+      icon: Mic,
+      title: "Palestras Inspiradoras",
+      description: "Converse com profissionais de sucesso",
+      details:
+        "Ouça histórias reais de profissionais que trilharam caminhos de sucesso em suas áreas. Descubra dicas valiosas e inspire-se para sua jornada profissional.",
+      gradient: "gradient-roxo",
+    },
+    {
+      icon: Building,
+      title: "Conheça a Estrutura",
+      description: "Visite nossos laboratórios e salas",
+      details:
+        "Explore nossos laboratórios modernos, salas de aula equipadas e toda a infraestrutura que você utilizará durante o curso. Veja de perto onde seu futuro será construído.",
+      gradient: "gradient-azul",
+    },
+    {
+      icon: Lightbulb,
+      title: "Tire suas Dúvidas",
+      description: "Descubra qual curso combina com você",
+      details:
+        "Converse com coordenadores e professores, faça testes vocacionais e participe de atividades práticas para descobrir sua verdadeira vocação profissional.",
+      gradient: "gradient-verde",
+    },
+  ];
+
   return (
-    <div className="Participe-Mom">
-      <h1 className="Participe-Text">Por que Participar?</h1>
+    <section id="programacao" className="participar">
+      <div className="container-participar">
 
-      <div className="Cards-Participar">
-        <div className="QpParticipar card1">
-          <div className="card-header">
-            <img src="/assets/images/Frame.png" alt="Microfone" />
-          </div>
-          <div className="card-body">
-            <h1>Depoimentos Inspiradoras</h1>
-            <h2>Visite nossos laboratórios e salas</h2>
-            <p>
-              Ouça histórias reais de profissionais que trilharam caminhos de{" "}
-              <span className="highlight">sucesso</span> em suas áreas.
-              Descubra <span className="highlight">dicas valiosas</span> e
-              inspire-se para sua jornada
-              <span className="highlight">profissional</span>.
-            </p>
-          </div>
+        <div className="header-participar">
+          <h2>Por que Participar?</h2>
+          <p>
+            A Feira de Profissões é muito mais que uma apresentação de cursos.
+            É sua oportunidade de vivenciar o futuro que você quer construir.
+          </p>
         </div>
 
-        <div className="QpParticipar card2">
-          <div className="card-header">
-            <img src="/assets/images/Frame.png" alt="Estrutura" />
-          </div>
-          <div className="card-body">
-            <h1>Conheça a Estrutura</h1>
-            <h2>Visite nossos laboratórios e salas</h2>
-            <p>
-              Explore nossos laboratórios
-              <span className="highlight">modernos</span>, salas de aula
-              equipadas e toda a infraestrutura que você utilizará durante o
-              curso. Veja de perto onde seu futuro será construído.
-            </p>
-          </div>
+        <div className="benefits-grid">
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+            return (
+              <div key={index} className={`card-benefit ${benefit.gradient}`}>
+                <div className="card-benefit-header">
+                  <div className="icon-circle">
+                    <Icon />
+                  </div>
+                  <h3>{benefit.title}</h3>
+                  <p>{benefit.description}</p>
+                </div>
+                <div className="card-benefit-body">
+                  <p>{benefit.details}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        <div className="QpParticipar card3">
-          <div className="card-header">
-            <img src="/assets/images/Frame.png" alt="Dúvidas" />
-          </div>
-          <div className="card-body">
-            <h1>Tire suas Dúvidas</h1>
-            <h2>Descubra qual curso combina com você</h2>
-            <p>
-              Converse com coordenadores e professores, faça testes
-              <span className="highlight">vocacionais</span> e participe de
-              <span className="highlight">atividades práticas</span> para
-              descobrir sua verdadeira vocação
-              <span className="highlight">profissional</span>.
-            </p>
-          </div>
+        <div className="Oportunity">
+          <h1>Não Fique de Fora desta Oportunidade!</h1>
+          <button className="Inscreva-button">
+            Inscreva-se Gratuitamente Agora!
+          </button>
         </div>
       </div>
-
-      <div className="Oportunity">
-        <h1>Não Fique de Fora desta Oportunidade!</h1>
-        <button className="Inscreva-button">
-          Inscreva-se Gratuitamente Agora!
-        </button>
-      </div>
-    </div>
+    </section>
   );
-};
+}
 
 export default Participar;

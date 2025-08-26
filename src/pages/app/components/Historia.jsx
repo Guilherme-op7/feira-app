@@ -20,7 +20,7 @@ export function Historia() {
       <div className="image-container">
         <img
           className="Xavier"
-          src="/assets/images/Xavier.png"
+          src="/assets/images/xavier.png"
           alt="Fotografia do Frei Xavier fazendo uma palestra"
         />
       </div>
