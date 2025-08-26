@@ -1,0 +1,151 @@
+.admin-panel {
+  background: #eaf6fe;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ccc;
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      img {
+        width: 126px;
+        height: 133px;
+        object-fit: contain;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin: 0;
+        color: rgba(41, 85, 150, 1)
+      }
+      
+      span {
+        font-size: 20px;
+        color: rgba(41, 85, 150, 1)
+      }
+    }
+
+    .btn-voltar {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 16px;
+      padding: 8px 45px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 19px;
+      color: rgba(36, 79, 143, 1);
+      box-shadow: 0px 1px 5px black;
+      margin-right: 20px;
+
+      &:hover {
+        background: #f2f2f2;
+      }
+    }
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin: 25px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 60%;
+
+    button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 12px;
+      transition: 0.2s;
+
+      &.active {
+        background: #d6e8f9;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .content-box {
+    background: #fff;
+    margin: 0 auto;
+    padding: 25px;
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+
+    .gerenciar {
+      h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+    }
+
+    .formulario {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
+
+      h2 {
+        margin-bottom: 5px;
+        font-size: 32px;
+
+        span {
+          color: rgba(36, 79, 143, 1);
+        }
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #555;
+        text-align: left;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        input {
+          padding: 10px;
+          border-radius: 6px;
+          border: 1px solid #ccc;
+        }
+
+        button {
+          margin-top: 10px;
+          padding: 12px;
+          background: #555;
+          color: #fff;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            background: #333;
+          }
+        }
+      }
+    }
+  }
+}
