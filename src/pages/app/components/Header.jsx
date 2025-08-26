@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export function Header() {
   return (
     <header className="container">
@@ -20,7 +22,9 @@ export function Header() {
         </nav>
       </div>
       <div className="acesso">
-        <button className="Adm">Acesso Administrativo</button>
+       <Link to="/painelAdmin">
+          <button className="Adm">Acesso Administrativo</button>
+        </Link>
       </div>
     </header>
   );

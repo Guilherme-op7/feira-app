@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import React, { useState } from "react";
 import "./AdminPanel.scss";
 
@@ -14,7 +16,11 @@ export default function App() {
             <span>Bem-vindo, Administrador</span>
           </div>
         </div>
-        <button className="btn-voltar">Voltar</button>
+        <div>
+          <Link to = '/'>
+          <button className="btn-voltar">Voltar</button>
+          </Link>
+        </div>
       </header>
 
       <div className="tabs">

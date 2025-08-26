@@ -1,154 +1,139 @@
-@import 'global';
+.participar {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f5f5, #ffffff);
 
-.Participe-Mom {
-  padding: 60px 20px;
-}
-
-.Participe-Text {
-  font-size: 56px;
-  color: $text-dark;
-  text-align: center;
-  margin-bottom: 50px;
-  margin-top: 40px;
-
-  @include responsive(tablet) {
-    font-size: 36px;
-    margin-bottom: 30px;
-  }
-}
-
-.Cards-Participar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  margin-bottom: 60px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-
-  @include responsive(tablet) {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .container-participar {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .QpParticipar {
-    border-radius: 12px;
-    overflow: hidden;
-    background: $white;
-    box-shadow: 0 4px 15px $shadow-light;
-    transition: transform 0.3s ease;
+  .header-participar {
+    text-align: center;
+    margin-bottom: 60px;
 
-    &:hover {
-      transform: translateY(-5px);
+    h2 {
+      font-size: 40px;
+      font-weight: bold;
+      color: #153f91;
+      margin-bottom: 20px;
     }
 
-    .card-header {
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    p {
+      font-size: 18px;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
 
-      img {
-        width: 40px;
-        height: 40px;
-      }
+  /* Flex dos benefícios */
+  .benefits-grid {
+    display: flex;
+    margin-bottom: 80px;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    .card-body {
-      padding: 20px;
-      text-align: left;
+    .card-benefit {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      height: 326px;
 
-      h1 {
-        font-size: 1.3rem;
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: $text-dark;
+      @media (min-width: 768px) {
+        width: 32%; 
       }
 
-      h2 {
-        font-size: 1rem;
-        margin-bottom: 12px;
-        color: $text-light;
+      .card-benefit-header {
+        padding: 20px 20px;
+        color: white;
+        text-align: center;
       }
 
-      p {
-        font-size: 0.95rem;
-        color: #333;
-        line-height: 1.5;
+      .icon-circle {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        .highlight {
-          color: #f44336;
-          font-weight: 600;
+        svg {
+          width: 40px;
+          height: 40px;
         }
       }
+
+      .card-benefit-body {
+        padding: 20px;
+        background: white;
+        text-align: center;
+        color: #444;
+      }
+    }
+
+    /* Gradientes específicos */
+    .gradient-roxo .card-benefit-header {
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    }
+
+    .gradient-azul .card-benefit-header {
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    }
+
+    .gradient-verde .card-benefit-header {
+      background: linear-gradient(135deg, #10b981, #14b8a6);
     }
   }
 
-  .card1 .card-header {
-    background: rgba(0, 91, 170, 1);
+  .Oportunity {
+    margin-top: 200px;
+    background: linear-gradient(
+      to right,
+      rgba(0, 91, 170, 1) 0%,     
+      rgba(128, 79, 85, 0.74) 57%, 
+      rgba(255, 66, 0, 0.82) 100%
+    );
+    width: 100%;
+    max-width: 1216px;
+    color: white;
+    padding: 30px;
+    border-radius: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
   }
 
-  .card2 .card-header {
-    background: rgba(255, 66, 0, 1);
+  .Oportunity h1 {
+    margin-bottom: 18px;
+    font-size: 34px;
+    color: white;
   }
 
-  .card3 .card-header {
-    background: #00a86b;
-  }
-}
+  .Inscreva-button {
+    background: white;
+    color: #005BAA;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+    width: 100%;
+    max-width: 482px;
+    margin: 0 auto;
 
-.Oportunity {
-  margin: 60px;
-  margin-top: 200px;
-background: linear-gradient(
-  to right,
-  rgba(0, 91, 170, 1) 0%,     
-  rgba(128, 79, 85, 0.74) 57%, 
-  rgba(255, 66, 0, 0.82) 100%    
-);
-  width: 1216px;
-  color: $white;
-  padding: 30px;
-  border-radius: 14px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  
-
-  @include responsive(tablet) {
-    margin: 20px;
-    padding: 20px;
-  }
-}
-
-.Oportunity h1 {
-  margin-bottom: 18px;
-  font-size: 34px;
-  color: white;
-
-  @include responsive(tablet) {
-    font-size: 24px;
-  }
-}
-
-.Inscreva-button {
-  background: $white;
-  color: #005BAA;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 20px;
-  transition: 0.3s;
-  width: 482px;
-  margin: 0 auto;
-
-
-  &:hover {
-    background: #f5f5f5;
-    transform: translateY(-2px);
+    &:hover {
+      background: #f5f5f5;
+      transform: translateY(-2px);
+    }
   }
 }
