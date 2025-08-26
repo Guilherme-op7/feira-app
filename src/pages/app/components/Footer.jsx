@@ -2,19 +2,25 @@ export function Footer() {
   return (
     <footer className="rodape">
       <div className="conteudo-rodape">
-        <div className="coluna-rodape">
+        <div className="coluna-rodape2">
           <img
             src="/assets/images/frei.jpg"
             alt="Logo Instituto"
             className="logo-instituto"
           />
-          <p className="slogan">
-            Descubra seu <span className="destaque">futuro</span> na Feira de
-            Profissões 2025 — conecte-se com o
-            <span className="destaque">mercado</span> e encontre o caminho
-            ideal para sua carreira!
-          </p>
+          <div className="info-instituto">
+            <h3 className="titulo-secao">
+              Instituto Social <br /> Nossa Senhora De Fátima
+            </h3>
+                      <div className="linha-divisoria"></div>
+            <p className="slogan">
+              Descubra seu <span className="destaque">futuro</span> na Feira de <br />
+              Profissões 2025 — conecte-se <br /> com o <span className="destaque"> mercado</span> e encontre o <br /> caminho
+              ideal para sua carreira!
+            </p>
+          </div>
         </div>
+
 
         <div className="coluna-rodape">
           <h3 className="titulo-secao">Horários e Endereço</h3>

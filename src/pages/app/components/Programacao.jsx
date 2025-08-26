@@ -8,39 +8,55 @@ export function Programacao() {
     {
       local: "Pátio",
       atividades: [
-        "Apresentação de Robótica - 9h às 10h",
-        "Demonstração de Impressão 3D - 10h30 às 11h30",
-        "Workshop de Programação - 13h às 14h",
-        "Exposição de Projetos - 14h30 às 16h"
+        "Estandes de empresas convidadas",
+        "Casa da Mulher Paulistana",
+        "Conexão Bem Maior",
+        "Óticas Carol",
+        "STB"
+      ]
+    },
+    {
+      local: "Demais estandes",
+      atividades: [
+        "CEDESP AVE MARIA",
+        "Metalmecânica - Ajustador e Torneiro Mecânico",
+        "Tecnologia de Redes e Manutenção de Computadores",
+        "Troca de Livros",
+        
+      ]
+    },
+    {
+      local: "Salas",
+      atividades: [
+        "Sala 4: Óticas Carol",
+        "Sala 5: Caixa",
+        "Sala 6: Inglês",
       ]
     },
     {
       local: "Primeiro Andar",
       atividades: [
-        "Palestra: Mercado de TI - 9h30 às 10h30",
-        "Oficina de Design Gráfico - 11h às 12h",
-        "Apresentação de Administração - 13h30 às 14h30",
-        "Roda de Conversa com Ex-alunos - 15h às 16h"
+        "Sala 18 - Administração: Empreendedorismo e Logistica",
+        "Sala 19 - CREAS",
+        "Sala 20 - Administração: Recursos Humanos, Contabilidade e Documentos Técnicos"
       ]
     },
     {
-      local: "Auditório",
+      local: "Segundo Andar",
       atividades: [
-        "Abertura Oficial - 9h às 9h30",
-        "Palestra Principal - 10h às 11h",
-        "Apresentação de Cases - 14h às 15h",
-        "Encerramento - 15h30 às 16h"
+        "Sala 24 - Comunicação Visual: Corel Draw, Photoshop e Caricaturas",
+        "Sala 25 - Informática: montagem, configuração e redes",
+        "Sala 26 - Informática: programação",
+        "Sala 27 - Elaboração de currículo"
       ]
     },
-    {
-      local: "Primeiro Andar",
+        {
+      local: "Terceiro Andar - Auditório",
       atividades: [
-        "Palestra: Mercado de TI - 9h30 às 10h30",
-        "Oficina de Design Gráfico - 11h às 12h",
-        "Apresentação de Administração - 13h30 às 14h30",
-        "Roda de Conversa com Ex-alunos - 15h às 16h"
+        "Simulação de entrevista de emprego",
+        "Oficina de Linkedin"
       ]
-    }
+    },
   ];
 
   const totalSlides = Math.ceil(programacaoData.length / 2);
