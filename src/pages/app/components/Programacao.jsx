@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../styles/_programacao.scss';
 
 export function Programacao() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,59 +31,60 @@ export function Programacao() {
         "Apresentação de Cases - 14h às 15h",
         "Encerramento - 15h30 às 16h"
       ]
+    },
+    {
+      local: "Primeiro Andar",
+      atividades: [
+        "Palestra: Mercado de TI - 9h30 às 10h30",
+        "Oficina de Design Gráfico - 11h às 12h",
+        "Apresentação de Administração - 13h30 às 14h30",
+        "Roda de Conversa com Ex-alunos - 15h às 16h"
+      ]
     }
   ];
 
+  const totalSlides = Math.ceil(programacaoData.length / 2);
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % programacaoData.length);
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
     }, 5000);
-
     return () => clearInterval(interval);
-  }, [programacaoData.length]);
+  }, [totalSlides]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % programacaoData.length);
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + programacaoData.length) % programacaoData.length);
-  };
+  const startIndex = currentSlide * 2;
+  const visibleCards = programacaoData.slice(startIndex, startIndex + 2);
 
   return (
     <div className="Program">
       <div className="program-header">
         <h1>Programação por Local</h1>
-        <div className="linha-divisoria"></div>
+        <div className="linha-divisoria1"></div>
       </div>
 
-      <div className="carousel-container">
-        <button className="carousel-btn prev" onClick={prevSlide}>
-          ‹
-        </button>
-
-        <div className="carousel-slide">
-          <div className="program-card">
-            <h1>{programacaoData[currentSlide].local}</h1>
+      <div className="carousel-slide">
+        {visibleCards.map((item, index) => (
+          <div className="program-card" key={index}>
+            <h1>{item.local}</h1>
             <ul>
-              {programacaoData[currentSlide].atividades.map((atividade, index) => (
-                <li key={index}>{atividade}</li>
+              {item.atividades.map((atividade, i) => (
+                <li key={i}>{atividade}</li>
               ))}
             </ul>
           </div>
-        </div>
-
-        <button className="carousel-btn next" onClick={nextSlide}>
-          ›
-        </button>
+        ))}
       </div>
 
-      <div className="carousel-indicators">
-        {programacaoData.map((_, index) => (
+      <div className="carousel-indicators22">
+        {Array.from({ length: totalSlides }).map((_, idx) => (
           <span
-            key={index}
-            className={`indicator ${index === currentSlide ? 'active' : ''}`}
-            onClick={() => setCurrentSlide(index)}
+            key={idx}
+            className={`indicator ${currentSlide === idx ? 'active' : ''}`}
+            onClick={() => goToSlide(idx)}
           />
         ))}
       </div>
@@ -90,6 +92,6 @@ export function Programacao() {
       <button className="Inscricao2">Se inscreva agora!</button>
     </div>
   );
-};
+}
 
 export default Programacao;
