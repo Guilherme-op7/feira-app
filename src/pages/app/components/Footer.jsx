@@ -12,7 +12,7 @@ export function Footer() {
             <h3 className="titulo-secao">
               Instituto Social <br /> Nossa Senhora De Fátima
             </h3>
-                      <div className="linha-divisoria"></div>
+            <div className="linha-divisoria"></div>
             <p className="slogan">
               Descubra seu <span className="destaque">futuro</span> na Feira das <br />
               Profissões 2025 — conecte-se <br /> com o <span className="destaque"> mercado</span> e encontre o <br /> caminho

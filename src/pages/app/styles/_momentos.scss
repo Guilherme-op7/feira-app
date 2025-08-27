@@ -10,6 +10,10 @@
     padding: 40px 10px;
   }
 
+  @include responsive(mobile) {
+    padding: 30px 10px;
+  }
+
   .titulo {
     color: #153f91;
     font-size: 56px;
@@ -18,6 +22,10 @@
 
     @include responsive(tablet) {
       font-size: 36px;
+    }
+
+    @include responsive(mobile) {
+      font-size: 28px;
     }
   }
 
@@ -35,27 +43,84 @@
     @include responsive(tablet) {
       font-size: 18px;
     }
+
+    @include responsive(mobile) {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
   }
 
-.galeria {
-  display: flex;
-  flex-wrap: wrap;  
-  gap: 20px;
-  padding: 20px;
+.galeria-carrossel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  overflow: hidden;
   background: #eef7ff;
   border-radius: 15px;
   box-shadow: 0 8px 10px $shadow-light;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  .carrossel-wrapper {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+  }
 
   .galeria-img {
-    width: calc((100% - 40px * 2) / 3); 
+    min-width: 300px; // largura mínima da imagem no desktop
+    max-width: 350px; // largura máxima para não ficar gigante
     border-radius: 12px;
     cursor: pointer;
     transition: transform 0.3s ease;
 
+    &.active {
+      transform: scale(1.05);
+    }
+
     &:hover {
       transform: scale(1.03);
+    }
+
+    @include responsive(tablet) {
+      min-width: 200px;
+      max-width: 250px;
+    }
+
+    @include responsive(mobile) {
+      min-width: 80%;
+      max-width: 90%;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+
+    &.left {
+      left: 10px;
+    }
+
+    &.right {
+      right: 10px;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    @include responsive(mobile) {
+      font-size: 1.5rem;
+      padding: 8px;
     }
   }
 }
@@ -71,7 +136,7 @@
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s;
 
     &:hover {
       background-color: #e75e00;
@@ -81,6 +146,11 @@
     @include responsive(tablet) {
       font-size: 14px;
       padding: 12px 30px;
+    }
+
+    @include responsive(mobile) {
+      font-size: 13px;
+      padding: 10px 25px;
     }
   }
 }
@@ -119,6 +189,12 @@
 
     &:hover {
       transform: scale(1.2);
+    }
+
+    @include responsive(mobile) {
+      font-size: 2rem;
+      top: 15px;
+      right: 20px;
     }
   }
 }

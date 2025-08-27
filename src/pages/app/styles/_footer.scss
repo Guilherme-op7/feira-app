@@ -16,111 +16,131 @@
 }
 
 .conteudo-rodape {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 70px;
 
   @include responsive(tablet) {
-    flex-direction: column; 
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+.coluna-rodape2 {
+
+  align-items: center;
+  flex: 1;
+  min-width: 220px;
+  gap: 30px;
+  margin-bottom: 40px;
+
+  @include responsive(mobile) {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
+  }
+
+  .logo-instituto {
+    max-width: 100px;
+    margin-bottom: 0;
+  }
+
+  .info-instituto {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .linha-divisoria {
+      width: 50px;
+      height: 2px;
+      background-color: $accent-color;
+      margin-bottom: 10px;
+    }
+
+    .slogan {
+      font-size: 14px;
+      line-height: 1.6;
+
+      .destaque {
+        font-weight: 600;
+      }
+    }
   }
 }
 
 .coluna-rodape {
+  flex: 1;
   min-width: 220px;
-}
 
-
-.coluna-rodape2 {
-  min-width: 210px;
-  display: flex;
-  align-items: center;
-  gap: 55px; 
-  margin-bottom: 40px;
-}
-
-.logo-instituto {
-  max-width: 80px; 
-  margin-bottom: 0; 
-}
-
-
-.logo-instituto {
-  max-width: 100px;
-  margin-bottom: 15px;
-}
-
-.titulo-secao {
-  font-weight: 700;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.linha-divisoria {
-  width: 50px;
-  height: 2px;
-  background-color: $accent-color;
-}
-
-.slogan {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.slogan .destaque {
-  font-weight: 600;
-}
-
-.horario {
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 8px;
-}
-
-.endereco {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.menu-rodape {
-  list-style: none;
-  padding: 0;
-  padding-top: 6  px;
-  margin: 0;
-
-}
-
-.menu-rodape li {
-  margin-bottom: 8px;
-}
-
-.menu-rodape a {
-  color: $white;
-  text-decoration: none;
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: $accent-color;
+  @include responsive(tablet) {
+    min-width: 100%;
   }
-}
 
-.instagram,
-.telefone {
-  font-size: 14px;
-  margin-bottom: 8px;
-}
+  .titulo-secao {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
 
-.instagram a,
-.telefone a {
-  color: $white;
-  text-decoration: none;
+  .linha-divisoria {
+    width: 50px;
+    height: 2px;
+    background-color: $accent-color;
+    margin-bottom: 10px;
+  }
 
-  &:hover {
-    color: $accent-color;
+  .horario {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .endereco {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .menu-rodape {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+
+  .instagram,
+  .telefone {
+    font-size: 14px;
+    margin-bottom: 8px;
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
   }
 }
 

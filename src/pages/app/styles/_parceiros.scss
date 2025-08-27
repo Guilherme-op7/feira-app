@@ -1,55 +1,94 @@
 @import 'global';
 
 .carousel-container {
+    display: flex;
     flex-direction: column;
-    padding-top: 60px;
-    width: 100%;   
-    gap: 10px;
+    align-items: center;
+    padding: 60px 20px;
+    width: 100%;
 }
 
 h1 {
-  font-size: 53px;
-  font-weight: 700;
-  color: #244F8F;
-  margin-bottom: 0px; 
+    font-size: 53px;
+    font-weight: 700;
+    color: #244F8F;
+    margin-bottom: 0px;
+    text-align: center;
 }
 
 .linha-divisoria3 {
-  width: 50px;
-  height: 2px;
-  background-color: $accent-color;
+    width: 50px;
+    height: 2px;
+    background-color: $accent-color;
+    margin: 0 auto 30px;
+}
 
-  margin: 0 auto 30px; 
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
 }
 
 .carousel-track {
     display: flex;
-    gap: 20px;
+    transition: transform 0.5s ease;
 }
 
-.carousel-img {
-    width: 304px;
-    height: 181px;
-    border-radius: 12px;
-    object-fit: cover;
-    margin: 0 auto;
+.carousel-slide {
+    flex: 0 0 auto;
+    width: 33.3333%;
+    padding: 0 10px;
+    text-align: center;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .carousel-text {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #244F8F;
+        font-weight: 600;
+    }
 }
 
 .carousel-indicators {
     display: flex;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .indicator {
     width: 12px;
     height: 12px;
-
     border-radius: 50%;
+    background-color: #ccc;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .indicator.active {
     background-color: #007bff;
+}
+
+@include responsive(tablet) {
+    .carousel-slide {
+        width: 50%; 
+    }
+}
+
+@include responsive(mobile) {
+    .carousel-slide {
+        width: 100%; 
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .carousel-text {
+        font-size: 16px;
+    }
 }

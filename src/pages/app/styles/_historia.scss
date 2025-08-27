@@ -9,22 +9,42 @@
 
   @include responsive(tablet) {
     flex-direction: column;
-    margin: 40px 10px;
-    padding: 20px 10px;
+    margin: 40px 20px;
+    padding: 20px 15px;
     gap: 30px;
   }
-}
 
+  @include responsive(mobile) {
+    flex-direction: column-reverse;
+    margin: 30px 10px;
+    padding: 15px 10px;
+    gap: 20px;
+    
+  }
+}
 
 .left-box {
   flex: 1;
+  text-align: left;
+
+  @include responsive(tablet) {
+    text-align: left; 
+  }
+
+  @include responsive(mobile) {
+    text-align: left; 
+  }
 }
 
-  .image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  @include responsive(mobile) {
+    width: 100%;
   }
+}
 
 .Xavier {
   width: 635px;
@@ -35,6 +55,17 @@
   &:hover {
     transform: scale(1.02);
   }
+
+  @include responsive(tablet) {
+    width: 450px;
+    height: 420px;
+  }
+
+  @include responsive(mobile) {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
 }
 
 .history h2 {
@@ -42,19 +73,46 @@
   font-size: 42px;
   font-weight: 700;
 
-
   @include responsive(tablet) {
     font-size: 28px;
+  }
+
+  @include responsive(mobile) {
+    font-size: 24px;
+  }
+}
+
+.linha-divisoria {
+  width: 60px;
+  height: 3px;
+  background: $accent-color;
+  margin: 15px 0;
+
+  @include responsive(mobile) {
+    margin: 10px 0;
   }
 }
 
 .history p {
   font-size: 30px;
-  font-weight: medium;
+  font-weight: 500;
   line-height: 1.7;
 
   @include responsive(tablet) {
-    font-size: 18px;
+    font-size: 20px;
+    text-align: left;
+  }
+
+  @include responsive(mobile) {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .highlight {
+    color: $accent-color;
+    font-weight: bold;
+    
   }
 }
 
@@ -74,6 +132,11 @@
   @include responsive(tablet) {
     font-size: 16px;
     padding: 8px 16px;
+  }
+
+  @include responsive(mobile) {
+    font-size: 14px;
+    padding: 6px 12px;
   }
 
   &:hover {

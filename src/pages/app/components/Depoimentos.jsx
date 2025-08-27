@@ -34,7 +34,8 @@ export function Depoimentos() {
 
       ),
       estilo: { height: "418px", width: "301px" }
-    }
+    },
+
   ];
 
   useEffect(() => {

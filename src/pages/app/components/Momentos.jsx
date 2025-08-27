@@ -1,15 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Momentos() {
   const [imagemSelecionada, setImagemSelecionada] = useState(null);
+  const [indice, setIndice] = useState(0);
 
-  const abrirImagem = (src) => {
-    setImagemSelecionada(src);
+  const fotos = [
+    "foto1.png",
+    "foto2.png",
+    "foto3.png",
+    "foto4.png",
+    "foto5.png",
+    "foto6.png",
+    "foto6.png",
+    "foto6.png",
+  ];
+
+  const abrirImagem = (src) => setImagemSelecionada(src);
+  const fecharImagem = () => setImagemSelecionada(null);
+
+
+
+  const nextSlide = () => {
+    setIndice((prev) => (prev === fotos.length - 1 ? 0 : prev + 1));
   };
 
-  const fecharImagem = () => {
-    setImagemSelecionada(null);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="momentos-section">
@@ -20,18 +40,26 @@ export function Momentos() {
         fizeram parte deste evento transformador!
       </p>
 
-      <div className="galeria">
-        {["foto1.png", "foto2.png", "foto3.png", "foto4.png", "foto5.png", "foto6.png"].map(
-          (foto, index) => (
+      <div className="galeria-carrossel">
+
+
+        <div className="carrossel-wrapper">
+          {fotos.map((foto, i) => (
             <img
-              key={index}
+              key={i}
               src={`/assets/images/${foto}`}
-              alt={`Foto ${index + 1}`}
-              className="galeria-img"
+              alt={`Foto ${i + 1}`}
+              className={`galeria-img ${i === indice ? "active" : ""}`}
               onClick={() => abrirImagem(`/assets/images/${foto}`)}
+              style={{
+                transform: `translateX(-${indice * 100}%)`,
+                transition: "transform 0.5s ease",
+              }}
             />
-          )
-        )}
+          ))}
+        </div>
+
+
       </div>
 
       <button className="btn-participar">Quero participar da Feira 2025!</button>
@@ -39,7 +67,11 @@ export function Momentos() {
       {imagemSelecionada && (
         <div className="modal" onClick={fecharImagem}>
           <span className="fechar">&times;</span>
-          <img src={imagemSelecionada} alt="Imagem expandida" className="modal-img" />
+          <img
+            src={imagemSelecionada}
+            alt="Imagem expandida"
+            className="modal-img"
+          />
         </div>
       )}
     </div>
