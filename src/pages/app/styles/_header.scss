@@ -1,7 +1,7 @@
-@import 'global';
-
 header.container {
-  @include flex-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 15px 40px;
   box-shadow: 0 2px 6px $shadow-light;
   background: #E0F5FA;
@@ -25,34 +25,39 @@ header.container {
   }
 }
 
-.navegation nav ul.list {
+.navegation {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  list-style: none;
-  margin: 0 auto;
+  justify-content: center;
 
-  @include responsive(tablet) {
-    gap: 15px;
-    flex-wrap: wrap;
+  nav ul.list {
+    display: flex;
     justify-content: center;
-  }
-}
+    gap: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-.navegation nav ul li {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  font-size: 22px;
-
-  @include responsive(tablet) {
-    font-size: 18px;
+    @include responsive(tablet) {
+      gap: 15px;
+      flex-wrap: wrap;
+    }
   }
 
-  &:hover {
-    color: $accent-color;
+  nav ul li {
+    cursor: pointer;
+    display: flex;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 22px;
+
+    @include responsive(tablet) {
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: $accent-color;
+    }
   }
 }
 
@@ -67,11 +72,12 @@ header.container {
   transition: 0.3s;
   box-shadow: 1px 2px 6px black;
   font-size: 18px;
-  margin-right: 25px;
+  margin-left: 25px;
 
   @include responsive(tablet) {
     font-size: 16px;
     padding: 8px 16px;
+    margin-left: 0;
   }
 
   &:hover {
