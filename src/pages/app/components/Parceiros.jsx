@@ -28,6 +28,7 @@ export function Parceiros() {
     return (
         <div className="carousel-container">
             <h1>Nossos Parceiros</h1>
+            <div className="linha-divisoria3"></div>
             <div className="carousel-track">
                 {parceiros.slice(startIndex, startIndex + 3).map(parceiro => (
                     <img

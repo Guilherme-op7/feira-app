@@ -13,7 +13,7 @@
   &__titulo {
     font-size: 46px;
     color: #153f91;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 
     @include responsive(tablet) {
       font-size: 32px;
@@ -23,7 +23,7 @@
   &__subtitulo {
     font-size: 20px;
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 
     @include responsive(tablet) {
       font-size: 16px;

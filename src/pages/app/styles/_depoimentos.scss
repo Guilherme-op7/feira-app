@@ -13,10 +13,6 @@
   padding: 60px 20px;
   text-align: center;
 
-  @include responsive(tablet) {
-    margin-top: 40px;
-    padding: 40px 10px;
-  }
 
   .depoimentos-text-principal {
     font-size: 56px;
@@ -24,22 +20,17 @@
     font-weight: bold;
     margin-bottom: 10px;
 
-    @include responsive(tablet) {
-      font-size: 36px;
-    }
   }
 
   .depoimentos-text-subprincipal {
     font-size: 24px;
     color: #1a1a1a;
-    margin-bottom: 40px;
+    margin-bottom: 55px;
     margin-left: auto;
     margin-right: auto;
     font-weight: 600;
 
-    @include responsive(tablet) {
-      font-size: 16px;
-    }
+
   }
 }
 
@@ -73,11 +64,6 @@
   box-shadow: 0 8px 20px $shadow-dark;
   animation: fadeIn 0.5s ease;
 
-  @include responsive(tablet) {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
 
   .depoimentos1-imagem {
     margin-left: -200px;
@@ -98,9 +84,6 @@
         font-weight: bold;
       }
 
-      @include responsive(tablet) {
-        font-size: 16px;
-      }
     }
 
     .depoimentos1-text2 {
@@ -108,9 +91,7 @@
       color: rgba(255, 255, 255, 1);
       margin-left: -74px;
 
-      @include responsive(tablet) {
-        font-size: 16px;
-      }
+
     }
   }
 }

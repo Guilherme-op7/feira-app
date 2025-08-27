@@ -23,6 +23,7 @@
       color: #555;
       max-width: 700px;
       margin: 0 auto;
+      font-weight: 700;
     }
   }
 
@@ -30,6 +31,7 @@
     display: flex;
     margin-bottom: 80px;
     align-items: center;
+
 
     @media (min-width: 768px) {
       flex-direction: row;
@@ -41,10 +43,12 @@
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      height: 326px;
+      height: 345px;
+      transition: 1.22;
+      background-color: white;
 
       @media (min-width: 768px) {
-        width: 32%; 
+        width: 32%;
       }
 
       .card-benefit-header {
@@ -70,15 +74,28 @@
       }
 
       .card-benefit-body {
+        padding: 17px;
+
+        text-align: center;
+        color: #444;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 25.6px;
+      }
+
+      .card-benefit-body2 {
         padding: 20px;
         background: white;
         text-align: center;
         color: #444;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 25.6px;
       }
     }
 
     .gradient-roxo .card-benefit-header {
-      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      background: linear-gradient(135deg, #ee7f24, #fd7f0a);
     }
 
     .gradient-azul .card-benefit-header {
@@ -86,18 +103,20 @@
     }
 
     .gradient-verde .card-benefit-header {
-      background: linear-gradient(135deg, #10b981, #14b8a6);
+      background: linear-gradient(135deg, #3b82f6, #fd7f0a);
     }
+  }
+
+  .card-benefit:hover {
+    transform: scale(1.02);
   }
 
   .Oportunity {
     margin-top: 200px;
-    background: linear-gradient(
-      to right,
-      rgba(0, 91, 170, 1) 0%,     
-      rgba(128, 79, 85, 0.74) 57%, 
-      rgba(255, 66, 0, 0.82) 100%
-    );
+    background: linear-gradient(to right,
+        rgba(0, 91, 170, 1) 0%,
+        rgba(128, 79, 85, 0.74) 57%,
+        rgba(255, 66, 0, 0.82) 100%);
     width: 100%;
     max-width: 1216px;
     color: white;

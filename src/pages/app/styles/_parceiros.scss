@@ -1,18 +1,25 @@
 @import 'global';
 
 .carousel-container {
-    @include flex-center;
     flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    padding: 60px 20px;
+    padding-top: 60px;
+    width: 100%;   
+    gap: 10px;
 }
 
 h1 {
-    font-size: 53px;
-    font-weight: 700;
-    color: #244F8F;
-    margin-bottom: 12px;
+  font-size: 53px;
+  font-weight: 700;
+  color: #244F8F;
+  margin-bottom: 0px; 
+}
+
+.linha-divisoria3 {
+  width: 50px;
+  height: 2px;
+  background-color: $accent-color;
+
+  margin: 0 auto 30px; 
 }
 
 .carousel-track {
@@ -30,7 +37,7 @@ h1 {
 
 .carousel-indicators {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     margin-top: 10px;
 }
 

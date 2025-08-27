@@ -10,7 +10,7 @@ export default function App() {
     <div className="admin-panel">
       <header className="admin-header">
         <div className="logo-area">
-          <img src="/assets/images/logo-frei.png" alt="Logo Feira de Profissões" />
+          <img src="/assets/images/feira.png" alt="Logo Feira de Profissões" />
           <div>
             <h1>Painel Administrativo</h1>
             <span>Bem-vindo, Administrador</span>

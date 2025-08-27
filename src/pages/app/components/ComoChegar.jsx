@@ -23,7 +23,7 @@ export function ComoChegar() {
     e.preventDefault();
 
     try {
-      await axios.post("https://backend-leitor-feira.onrender.com/inscricoes", FormularioD);
+      await axios.post("#", FormularioD);
       alert("Inscrição enviada com sucesso!");
       setFormularioD({
         nome: "",
@@ -45,6 +45,7 @@ export function ComoChegar() {
   return (
     <div className="comoChegar">
       <h1 className="comoChegar__titulo">Como Chegar</h1>
+              <div className="linha-divisoria3"></div>
       <h2 className="comoChegar__subtitulo">
         Todas as informações que você precisa para participar da feira
       </h2>
@@ -135,10 +136,10 @@ export function ComoChegar() {
             <h4>O que você vai ganhar:</h4>
             <ul>
               <li> Material informativo dos cursos</li>
-              <li> Palestras com profissionais de sucesso</li>
+              <li> Encontro com profissionais de sucesso</li>
               <li> Visitação completa às instalações</li>
               <li> Conhecer as áreas de interesse</li>
-              <li> Ganhar brindes exclusivos</li>
+              <li> Receber brindes exclusivos</li>
             </ul>
           </div>
         </div>

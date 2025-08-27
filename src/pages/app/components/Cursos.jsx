@@ -39,7 +39,7 @@ export function Cursos() {
             alt="imagem ilustrativa informatica"
           />
           <h1 className="Admn-text">
-            Gestão de Negócios e Empreendedorismo{" "}
+            Administração
           </h1>
           <p className="Admn-text">
             Forme-se para liderar empresas e desenvolver seu próprio negócio

@@ -1,33 +1,7 @@
 import '../styles/_participar.scss';
 import { Mic, Building, Lightbulb } from "lucide-react";
-export function Participar() {
-  const benefits = [
-    {
-      icon: Mic,
-      title: "Palestras Inspiradoras",
-      description: "Converse com profissionais de sucesso",
-      details:
-        "Ouça histórias reais de profissionais que trilharam caminhos de sucesso em suas áreas. Descubra dicas valiosas e inspire-se para sua jornada profissional.",
-      gradient: "gradient-roxo",
-    },
-    {
-      icon: Building,
-      title: "Conheça a Estrutura",
-      description: "Visite nossos laboratórios e salas",
-      details:
-        "Explore nossos laboratórios modernos, salas de aula equipadas e toda a infraestrutura que você utilizará durante o curso. Veja de perto onde seu futuro será construído.",
-      gradient: "gradient-azul",
-    },
-    {
-      icon: Lightbulb,
-      title: "Tire suas Dúvidas",
-      description: "Descubra qual curso combina com você",
-      details:
-        "Converse com coordenadores e professores, faça testes vocacionais e participe de atividades práticas para descobrir sua verdadeira vocação profissional.",
-      gradient: "gradient-verde",
-    },
-  ];
 
+export function Participar() {
   return (
     <section id="programacao" className="participar">
       <div className="container-participar">
@@ -41,23 +15,56 @@ export function Participar() {
         </div>
 
         <div className="benefits-grid">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <div key={index} className={`card-benefit ${benefit.gradient}`}>
-                <div className="card-benefit-header">
-                  <div className="icon-circle">
-                    <Icon />
-                  </div>
-                  <h3>{benefit.title}</h3>
-                  <p>{benefit.description}</p>
-                </div>
-                <div className="card-benefit-body">
-                  <p>{benefit.details}</p>
-                </div>
+
+          <div className="card-benefit gradient-roxo">
+            <div className="card-benefit-header">
+              <div className="icon-circle">
+                <Mic />
               </div>
-            );
-          })}
+              <h3>Depoimentos Inspiradores</h3>
+              <p>Visite Estandes de Nossos Parceiros</p>
+            </div>
+            <div className="card-benefit-body2">
+              <p>
+                Ouça histórias reais de profissionais que trilharam caminhos de
+                 <span className='highlight'> sucesso</span> em suas áreas. Descubra dicas valiosas e inspire-se para
+                sua jornada <span className='highlight'>  profissional</span>.
+              </p>
+            </div>
+          </div>
+
+          <div className="card-benefit gradient-azul">
+            <div className="card-benefit-header">
+              <div className="icon-circle">
+                <Building />
+              </div>
+              <h3>Conheça a Estrutura</h3>
+              <p>Visite nossos laboratórios e salas</p>
+            </div>
+            <div className="card-benefit-body">
+              <p>
+                Explore nossos laboratórios <span className='highlight'> modernos</span>, salas de aula equipadas e
+                toda a infraestrutura que você utilizará durante o <span className='highlight'> curso</span>. Veja de
+                perto onde seu <span className='highlight'> futuro</span> será construído.
+              </p>
+            </div>
+          </div>
+
+          <div className="card-benefit gradient-verde">
+            <div className="card-benefit-header">
+              <div className="icon-circle">
+                <Lightbulb />
+              </div>
+              <h3>Tire suas Dúvidas</h3>
+              <p>Descubra qual curso combina com você</p>
+            </div>
+            <div className="card-benefit-body2">
+              <p>
+                Converse com coordenadores e professores, faça e participe de atividades práticas para descobrir sua
+                verdadeira vocação <span className='highlight'> profissional</span>.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="Oportunity">

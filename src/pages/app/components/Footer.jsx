@@ -14,7 +14,7 @@ export function Footer() {
             </h3>
                       <div className="linha-divisoria"></div>
             <p className="slogan">
-              Descubra seu <span className="destaque">futuro</span> na Feira de <br />
+              Descubra seu <span className="destaque">futuro</span> na Feira das <br />
               Profissões 2025 — conecte-se <br /> com o <span className="destaque"> mercado</span> e encontre o <br /> caminho
               ideal para sua carreira!
             </p>
