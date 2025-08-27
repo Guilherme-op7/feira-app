@@ -21,11 +21,6 @@ export function Header() {
           </ul>
         </nav>
       </div>
-      <div className="acesso">
-       <Link to="/painelAdmin">
-          <button className="Adm">Acesso Administrativo</button>
-        </Link>
-      </div>
     </header>
   );
 };

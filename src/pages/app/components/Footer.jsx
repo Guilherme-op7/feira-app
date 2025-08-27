@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export function Footer() {
   return (
     <footer className="rodape">
@@ -89,7 +91,15 @@ export function Footer() {
           de Fátima.
         </p>
       </div>
+
+        <div className="acesso">
+       <Link to="/painelAdmin">
+          <button className="Adm">Acesso Administrativo</button>
+        </Link>
+      </div>
     </footer>
+
+    
   );
 };
 
