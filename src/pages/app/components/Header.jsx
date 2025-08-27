@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-
+import '../styles/_header.scss'
 export function Header() {
   return (
     <header className="container">

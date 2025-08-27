@@ -65,11 +65,16 @@
   animation: fadeIn 0.5s ease;
 
 
-  .depoimentos1-imagem {
+  .depoimentos1-imagem img{
     margin-left: -200px;
-    height: 488px;
+    height: 418px;
     width: 301px;
+    object-fit: cover;
+    margin-bottom: 57px;
+
   }
+
+
 
   .depoimentos1-conteudo {
     .depoimentos1-text1 {
