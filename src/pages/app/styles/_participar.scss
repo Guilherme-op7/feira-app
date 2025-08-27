@@ -1,6 +1,6 @@
 .participar {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #f5f5f5, #ffffff);
+
 
   .container-participar {
     max-width: 1200px;
@@ -26,7 +26,6 @@
     }
   }
 
-  /* Flex dos benefícios */
   .benefits-grid {
     display: flex;
     margin-bottom: 80px;
@@ -78,7 +77,6 @@
       }
     }
 
-    /* Gradientes específicos */
     .gradient-roxo .card-benefit-header {
       background: linear-gradient(135deg, #8b5cf6, #ec4899);
     }

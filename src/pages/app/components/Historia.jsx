@@ -10,8 +10,8 @@ export function Historia() {
           salas <br /> equipadas, laboratórios, oficinas, <br />  biblioteca e auditório.
           <br />
           <br />
-          Aqui, preparamos nossos alunos para entrar no mercado de trabalho
-          com <span className="highlight">confiança</span> e
+          Aqui, preparamos nossos alunos para <br /> entrar no mercado de trabalho
+          com <br /> <span className="highlight">confiança</span> e
           <span className="highlight"> competitividade.</span>
         </p>
 

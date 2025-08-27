@@ -59,7 +59,7 @@
     text-align: left;
     box-shadow: 0 8px 16px $shadow-medium;
     width: 648px;
-    height: 698px;
+    height: 600px;
     margin-bottom: 87px;
   
     h3 {
@@ -155,15 +155,17 @@
 
   &__beneficios {
     background: $white;
-    padding: 30px 20px;
+    padding: 30px 30px;
     border-radius: 15px;
     box-shadow: 0 8px 16px $shadow-light;
     text-align: left;
-    height: 484px;
+    height: 410px;
 
     h4 {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-size: 28px;
+      margin-bottom: 27px;
+      font-weight: bold;
+      color: #153f91;
     }
 
     ul {
@@ -171,10 +173,11 @@
       padding: 0;
 
       li {
-        margin-bottom: 10px;
-        font-size: 1rem;
+        margin-bottom: 40px;
+        font-size: 18px;
         display: flex;
         align-items: center;
+        font-weight: 700;
 
         &::before {
           content: '✅';

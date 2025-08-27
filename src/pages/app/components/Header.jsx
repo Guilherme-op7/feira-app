@@ -6,7 +6,7 @@ export function Header() {
       <div>
         <img
           className="frei-logo"
-          src="/assets/images/logo-frei.png"
+          src="/assets/images/feira.png"
           alt="logo do frei"
         />
       </div>
