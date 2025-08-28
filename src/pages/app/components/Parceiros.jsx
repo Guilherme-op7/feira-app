@@ -51,7 +51,7 @@ export function Parceiros() {
       <div className="carousel-track">
         {getCurrentItems().map(parceiro => (
           <div key={parceiro.id} className="carousel-slide">
-            <img src={parceiro.img} alt={parceiro.nome} />
+            <img src={parceiro.img} alt={parceiro.nome} loading="lazy" />
           </div>
         ))}
       </div>
@@ -68,5 +68,3 @@ export function Parceiros() {
     </div>
   );
 }
-
-export default Parceiros;

@@ -46,10 +46,10 @@
 
   &__rei {
     display: flex;
-    gap: 30px;
-    max-width: 100%;
+    gap: 40px;
+    max-width: 1200px;
     margin: 0 auto;
-    align-items: center; 
+    align-items: flex-start; 
     justify-content: center;
 
     @include responsive(mobile) {
@@ -58,16 +58,11 @@
     }
   }
 
-
   .bloco1, .bloco2 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 800px; 
-  }
-
-  .bloco2 {
-    margin-bottom: 640px;
+    max-width: 600px; 
   }
 
   &__mapa iframe {
