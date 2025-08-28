@@ -3,6 +3,7 @@
 .Estrutura-Mom {
   border-radius: 10px;
   margin: 60px 40px;
+  text-align: center;
 
   @include responsive(tablet) {
     padding: 40px 20px;
@@ -55,29 +56,26 @@
 
 .container {
   display: flex;
-  gap: 345px;
   justify-content: center;
   align-items: flex-start;
+  gap: 60px;
+  margin-top: 40px;
 
   @include responsive(tablet) {
     flex-direction: column;
+    align-items: center;
     gap: 30px;
   }
 }
 
 .estrutura-image-container {
 
-  margin: 40px 0;
-  padding: 5px;
-  background-color: $white;
-  border-radius: 4px;
-  display: flex;
   justify-content: center;
 
   img {
     width: 100%;
-    max-width: 785px;
-    height: 593px;
+    max-width: 600px;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 10px $shadow-dark;
     transition: transform 0.3s ease;
@@ -88,30 +86,19 @@
 
     @include responsive(tablet) {
       max-width: 500px;
-      height: auto;
     }
 
     @include responsive(mobile) {
       max-width: 100%;
-      height: auto;
     }
   }
 }
 
 .Cards-Estrutura {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 41px;
-  margin-top: 40px;
-
-  @include responsive(tablet) {
-    gap: 30px;
-  }
-
-  @include responsive(mobile) {
-    gap: 20px;
-  }
+  gap: 88px;
+  max-width: 700px; 
 }
 
 .Qp1,
@@ -123,6 +110,7 @@
   box-shadow: 0 4px 10px $shadow-light;
   transition: transform 0.3s ease;
   height: auto;
+  text-align: center;
 
   &:hover {
     transform: translateY(-5px);
@@ -136,11 +124,13 @@
 
 .card-title {
   display: flex;
-  align-items: center;
+  align-items: center; 
+  justify-content: flex-start; 
   gap: 18px;
   font-size: 26px;
   color: $text-dark;
   margin-bottom: 15px;
+  text-align: left; 
 
   @include responsive(tablet) {
     font-size: 22px;
@@ -185,6 +175,7 @@
   line-height: 1.5;
   font-weight: 500;
   margin-bottom: 0px;
+  text-align: left; 
 
   @include responsive(tablet) {
     font-size: 16px;

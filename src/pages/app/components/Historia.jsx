@@ -15,7 +15,7 @@ export function Historia() {
           <span className="highlight"> competitividade.</span>
         </p>
 
-        <button>Conheça nosso Site!</button>
+        <button><a className="ancoragem1" href="https://www.acaonsfatima.org.br/" target="blank">Conheça nosso Site!</a></button>
       </div>
       <div className="image-container">
         <img

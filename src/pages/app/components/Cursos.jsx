@@ -76,7 +76,7 @@ export function Cursos() {
   const totalSlides = Math.ceil(cursos.length / cardsPerView);
 
   return (
-    <div className="Cursos">
+    <div className="Cursos" id = "cursos">
       <h1>Conheça Nossos Cursos</h1>
       <p>
         Descubra qual caminho <span className="highlight">profissional</span>{" "}
