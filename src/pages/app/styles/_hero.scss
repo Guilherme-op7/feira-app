@@ -99,7 +99,7 @@
 
 .botoes-hero {
   display: flex;
-  gap: 59px;
+  gap: 50px;
   flex-wrap: wrap;
   justify-content: center;
 
@@ -119,11 +119,19 @@
     }
   }
 }
-
+.botoes-hero a {
+  text-decoration: none;
+}
+.botoes-hero .botao1 {
+color: #005BAA;
+}
+.botoes-hero .botao2 {
+  color: white;
+}
 .TL-inicial button {
   border: none;
   border-radius: 25px;
-  font-size: 1rem;
+  font-size: 25px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;

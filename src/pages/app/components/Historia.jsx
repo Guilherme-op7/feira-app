@@ -1,6 +1,6 @@
 export function Historia() {
   return (
-    <div className="history">
+    <div id="sobre" className="history">
       <div className="left-box">
         <h2>Nossa História</h2>
         <div className="linha-divisoria"></div>

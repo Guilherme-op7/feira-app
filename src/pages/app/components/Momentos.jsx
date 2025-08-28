@@ -62,7 +62,7 @@ export function Momentos() {
 
       </div>
 
-      <button className="btn-participar">Quero participar da Feira 2025!</button>
+      <button className="btn-participar"><a href="#formulario">Quero participar da Feira 2025!</a></button>
 
       {imagemSelecionada && (
         <div className="modal" onClick={fecharImagem}>

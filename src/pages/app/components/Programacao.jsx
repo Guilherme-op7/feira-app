@@ -77,7 +77,7 @@ export function Programacao() {
 
   return (
     <div className="Program">
-      <div className="program-header">
+      <div id="programa"className="program-header">
         <h1>Programação por Local</h1>
         <div className="linha-divisoria1"></div>
       </div>
@@ -105,7 +105,7 @@ export function Programacao() {
         ))}
       </div>
 
-      <button className="Inscricao2">Se inscreva agora!</button>
+      <button className="Inscricao2"><a className="ancoragem" href="#formulario">Se inscreva agora!</a></button>
     </div>
   );
 }

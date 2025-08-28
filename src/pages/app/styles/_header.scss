@@ -33,17 +33,13 @@ header.container {
 
 .navegation {
   display: flex;
-  justify-content: center;
-  align-items: center;
 
   nav {
     ul.list {
       display: flex;
-      justify-content: center;
-      align-items: center;
       gap: 50px;
       list-style: none;
-      margin: 0;
+      margin-right: 450px;
       padding: 0;
 
       @include responsive(tablet) {
@@ -56,7 +52,9 @@ header.container {
       }
     }
 
-    ul li {
+    ul li a {
+      text-decoration: none;
+      color:black;
       cursor: pointer;
       display: flex;
       font-weight: 600;

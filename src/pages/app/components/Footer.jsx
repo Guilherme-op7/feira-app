@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export function Footer() {
   return (
     <footer className="rodape">
-      <div className="conteudo-rodape">
+      <div id="contato" className="conteudo-rodape">
         <div className="coluna-rodape2">
           <img
             src="/assets/images/frei.jpg"

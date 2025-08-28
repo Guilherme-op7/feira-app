@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export function Header() {
   return (
-    <header className="container">
+    <header id="inicio" className="container">
       <div>
         <img
           className="frei-logo"
@@ -13,11 +13,11 @@ export function Header() {
       <div className="navegation">
         <nav>
           <ul className="list">
-            <li>inicio</li>
-            <li>programação</li>
-            <li>cursos</li>
-            <li>inscrição</li>
-            <li>contato</li>
+            <li><a href="inicio">inicio</a></li>
+            <li><a href="#programa">programação</a></li>
+            <li><a href="#cursos">cursos</a></li>
+            <li><a href="#formulario">inscrição</a></li>
+            <li><a href="#contato">contato</a></li>
           </ul>
         </nav>
       </div>

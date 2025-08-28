@@ -1,7 +1,7 @@
 
 export function Cursos() {
   return (
-    <div className="Cursos">
+    <div id="cursos" className="Cursos">
       <h1> Conheça Nossos Cursos </h1>
       <p>
         Descubra qual caminho <span className="highlight">profissional</span>{" "}

@@ -50,7 +50,7 @@ export function Depoimentos() {
 
   return (
     <div className="depoimentos-mom">
-      <h1 className="depoimentos-text-principal">Depoimentos</h1>
+      <h1 id="depoimentos" className="depoimentos-text-principal">Depoimentos</h1>
       <h2 className="depoimentos-text-subprincipal">
         Conheça as histórias de sucesso de quem transformou sua vida
         profissional <br /> conosco

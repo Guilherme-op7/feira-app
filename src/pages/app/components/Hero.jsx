@@ -14,8 +14,8 @@ export function hero(){
           </p>
 
           <div className="botoes-hero">
-            <button className="Programing"> Ver Programação </button>
-            <button className="Inscricao"> Fazer minha Inscrição</button>
+            <button className="Programing"><a className="botao1" href="#programa">Ver Programação</a>  </button>
+            <button  className="Inscricao"><a className="botao2" href="#formulario">Fazer minha Inscrição</a> </button>
           </div>
         </div>
       </div>

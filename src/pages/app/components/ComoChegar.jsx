@@ -64,7 +64,7 @@ export function ComoChegar() {
             ></iframe>
           </div>
 
-          <div className="comoChegar__formulario">
+          <div id="formulario" className="comoChegar__formulario">
             <h4>Formulário de <span>Inscrição</span></h4>
             <form onSubmit={EnviarFormulario}>
               <label>Nome Completo*</label>

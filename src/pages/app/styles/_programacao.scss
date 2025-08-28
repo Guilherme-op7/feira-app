@@ -226,6 +226,7 @@
   box-shadow: 1px 2px 6px black;
   font-size: 18px;
 
+  
   @include responsive(tablet) {
     font-size: 16px;
     padding: 12px 30px;
@@ -242,3 +243,7 @@
     transform: translateY(-2px);
   }
 }
+  .ancoragem {
+    text-decoration: none;
+    color:white;
+  }

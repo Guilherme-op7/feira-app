@@ -86,7 +86,7 @@ export function Participar() {
         <div className={`Oportunity mobile-opportunity`}>
           <h1>Não Fique de Fora desta Oportunidade!</h1>
           <button className="Inscreva-button">
-            Inscreva-se Gratuitamente Agora!
+            <a className="ancoragem" href="#formulario">Inscreva-se Gratuitamente Agora!</a>
           </button>
         </div>
       </div>
