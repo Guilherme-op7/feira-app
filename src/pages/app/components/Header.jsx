@@ -8,7 +8,7 @@ export function Header() {
   };
 
   return (
-    <header id="inicio" className="container">
+    <header id="inicio" className="container232">
       <div>
         <img
           className="frei-logo"

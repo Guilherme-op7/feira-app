@@ -8,7 +8,7 @@ export function Estrutura() {
         Conheça nossos laboratórios, salas{" "}
         <span className="highlight">modernas</span> e espaços de aprendizado{" "}
       </p>
-      <div className='container2'>
+      <div className='container'>
         <div className="estrutura-image-container">
           <img src="/assets/images/fachada.png" alt="Foto do prédio" />
         </div>

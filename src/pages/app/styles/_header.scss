@@ -1,6 +1,6 @@
 @import 'global';
 
-header.container {
+header.container232 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,7 +23,7 @@ header.container {
 }
 
 .hamburguer {
-  display: none;
+  display: none; 
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -53,30 +53,32 @@ header.container {
 }
 
 .navegation {
-  nav, & {
-    ul.list {
-      display: flex;
-      gap: 50px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+  ul.list {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-      li a {
-        text-decoration: none;
-        color: black;
-        font-weight: 600;
-        font-size: 22px;
-        transition: color 0.3s ease;
+    li a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      font-size: 22px;
+      transition: color 0.3s ease;
 
-        &:hover {
-          color: $accent-color;
-        }
+      &:hover {
+        color: $accent-color;
       }
     }
   }
 }
 
 @include responsive(tablet) {
+  header.container2 {
+    justify-content: space-between;
+  }
+
   .hamburguer {
     display: flex;
   }
