@@ -1,94 +1,93 @@
 @import 'global';
 
 .carousel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 20px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  width: 100%;
 }
 
 h1 {
-    font-size: 53px;
-    font-weight: 700;
-    color: #244F8F;
-    margin-bottom: 0px;
-    text-align: center;
+  font-size: 53px;
+  font-weight: 700;
+  color: #244F8F;
+  margin-bottom: 0px;
+  text-align: center;
 }
 
 .linha-divisoria3 {
-    width: 50px;
-    height: 2px;
-    background-color: $accent-color;
-    margin: 0 auto 30px;
-}
-
-.carousel-wrapper {
-    overflow: hidden;
-    width: 100%;
+  width: 50px;
+  height: 2px;
+  background-color: $accent-color;
+  margin: 0 auto 30px;
 }
 
 .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .carousel-slide {
-    flex: 0 0 auto;
-    width: 33.3333%;
-    padding: 0 10px;
-    text-align: center;
+  flex: 0 0 30%; // desktop: 3 colunas
+  max-width: 300px;
+  text-align: center;
 
-    img {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-        object-fit: cover;
-    }
-
-    .carousel-text {
-        margin-top: 10px;
-        font-size: 18px;
-        color: #244F8F;
-        font-weight: 600;
-    }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
 }
 
 .carousel-indicators {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .indicator.active {
-    background-color: #007bff;
+  background-color: #007bff;
 }
 
+/* Tablet */
 @include responsive(tablet) {
-    .carousel-slide {
-        width: 50%; 
-    }
+  .carousel-slide {
+    flex: 0 0 45%; 
+    max-width: 250px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
 }
 
+/* Mobile */
 @include responsive(mobile) {
-    .carousel-slide {
-        width: 100%; 
-    }
+  .carousel-track {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
 
-    h1 {
-        font-size: 32px;
-    }
+  .carousel-slide {
+    flex: 0 0 90%; 
+    max-width: 90%;
+  }
 
-    .carousel-text {
-        font-size: 16px;
-    }
+  h1 {
+    font-size: 28px;
+  }
 }

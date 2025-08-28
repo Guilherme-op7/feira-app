@@ -2,8 +2,8 @@
 
 header.container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; // espaço entre as 3 áreas
   padding: 15px 40px;
   box-shadow: 0 2px 6px $shadow-light;
   background: #E0F5FA;
@@ -11,54 +11,70 @@ header.container {
 
   @include responsive(tablet) {
     flex-direction: column;
-    gap: 20px;
     padding: 15px 20px;
+    gap: 20px;
   }
 }
+
 
 .frei-logo {
   width: 107px;
   height: 112px;
   transition: transform 0.3s ease;
-  margin: 10px;
 
   &:hover {
     transform: scale(1.05);
   }
+
+  @include responsive(tablet) {
+    margin-bottom: 10px;
+  }
 }
 
 .navegation {
-  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  nav ul.list {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  nav {
+    ul.list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-    @include responsive(tablet) {
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-  }
+      @include responsive(tablet) {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
 
-  nav ul li {
-    cursor: pointer;
-    display: flex;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    font-size: 22px;
-
-    @include responsive(tablet) {
-      font-size: 18px;
+      @include responsive(mobile) {
+        gap: 10px;
+      }
     }
 
-    &:hover {
-      color: $accent-color;
+    ul li {
+      cursor: pointer;
+      display: flex;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      font-size: 22px;
+
+      @include responsive(tablet) {
+        font-size: 18px;
+      }
+
+      @include responsive(mobile) {
+        font-size: 16px;
+      }
+
+      &:hover {
+        color: $accent-color;
+      }
     }
   }
 }
+ 

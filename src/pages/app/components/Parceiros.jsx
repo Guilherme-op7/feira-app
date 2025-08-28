@@ -12,9 +12,8 @@ export function Parceiros() {
   ];
 
   const [startIndex, setStartIndex] = useState(0);
-
-  // Detect mobile
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
@@ -25,14 +24,11 @@ export function Parceiros() {
   const itemsPerSlide = isMobile ? 1 : 3;
   const totalSlides = Math.ceil(parceiros.length / itemsPerSlide);
 
-  // Auto-slide no mobile
   useEffect(() => {
     if (!isMobile) return;
-
     const interval = setInterval(() => {
       setStartIndex(prev => (prev + 1) % parceiros.length);
     }, 3000);
-
     return () => clearInterval(interval);
   }, [isMobile, parceiros.length]);
 
@@ -40,12 +36,10 @@ export function Parceiros() {
     setStartIndex(slideIndex * itemsPerSlide);
   };
 
-  // Seleciona os itens corretamente, fazendo loop infinito no mobile
   const getCurrentItems = () => {
     if (!isMobile) {
       return parceiros.slice(startIndex, startIndex + itemsPerSlide);
     }
-    // Mobile: sempre 1 imagem, loopando
     return [parceiros[startIndex % parceiros.length]];
   };
 
@@ -56,12 +50,9 @@ export function Parceiros() {
 
       <div className="carousel-track">
         {getCurrentItems().map(parceiro => (
-          <img
-            key={parceiro.id}
-            src={parceiro.img}
-            alt={parceiro.nome}
-            className="carousel-img"
-          />
+          <div key={parceiro.id} className="carousel-slide">
+            <img src={parceiro.img} alt={parceiro.nome} />
+          </div>
         ))}
       </div>
 

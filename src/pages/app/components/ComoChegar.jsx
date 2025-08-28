@@ -126,10 +126,7 @@ export function ComoChegar() {
             </div>
             </section>
 
-            <div className="parte_inferior">
-            <p className="semantico"> Local</p>
-            <p className="semantico2">Instituto Social  <br /> Nossa Senhora de Fátima, Av. Cel. Octaviano de Freitas Costa, 463 Veleiros - São Paulo - SP 04773-000</p>
-            </div>
+
           </div>
 
           <div className="comoChegar__beneficios">
