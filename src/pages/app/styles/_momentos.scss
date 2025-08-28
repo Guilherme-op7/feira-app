@@ -69,8 +69,8 @@
   }
 
   .galeria-img {
-    min-width: 300px; // largura mínima da imagem no desktop
-    max-width: 350px; // largura máxima para não ficar gigante
+    min-width: 300px;
+    max-width: 350px; 
     border-radius: 12px;
     cursor: pointer;
     transition: transform 0.3s ease;

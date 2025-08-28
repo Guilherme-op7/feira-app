@@ -3,19 +3,14 @@
 header.container {
   display: flex;
   align-items: center;
-  justify-content: space-between; // espaço entre as 3 áreas
+  justify-content: space-between;
   padding: 15px 40px;
   box-shadow: 0 2px 6px $shadow-light;
   background: #E0F5FA;
   backdrop-filter: blur(10px);
-
-  @include responsive(tablet) {
-    flex-direction: column;
-    padding: 15px 20px;
-    gap: 20px;
-  }
+  position: relative;
+  z-index: 1000;
 }
-
 
 .frei-logo {
   width: 107px;
@@ -25,54 +20,92 @@ header.container {
   &:hover {
     transform: scale(1.05);
   }
+}
 
-  @include responsive(tablet) {
-    margin-bottom: 10px;
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+
+  span {
+    display: block;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  &.active span:nth-child(2) {
+    opacity: 0;
+  }
+  &.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 }
 
 .navegation {
-  display: flex;
-
-  nav {
+  nav, & {
     ul.list {
       display: flex;
       gap: 50px;
       list-style: none;
-      margin-right: 450px;
       padding: 0;
+      margin: 0;
 
-      @include responsive(tablet) {
-        gap: 20px;
-        flex-wrap: wrap;
-      }
+      li a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 22px;
+        transition: color 0.3s ease;
 
-      @include responsive(mobile) {
-        gap: 10px;
-      }
-    }
-
-    ul li a {
-      text-decoration: none;
-      color:black;
-      cursor: pointer;
-      display: flex;
-      font-weight: 600;
-      transition: color 0.3s ease;
-      font-size: 22px;
-
-      @include responsive(tablet) {
-        font-size: 18px;
-      }
-
-      @include responsive(mobile) {
-        font-size: 16px;
-      }
-
-      &:hover {
-        color: $accent-color;
+        &:hover {
+          color: $accent-color;
+        }
       }
     }
   }
 }
- 
+
+@include responsive(tablet) {
+  .hamburguer {
+    display: flex;
+  }
+
+  .navegation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #E0F5FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    flex-direction: column;
+
+    ul.list {
+      flex-direction: column;
+      gap: 30px;
+
+      li a {
+        font-size: 28px;
+      }
+    }
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+}

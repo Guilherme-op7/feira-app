@@ -32,7 +32,7 @@ h1 {
 }
 
 .carousel-slide {
-  flex: 0 0 30%; // desktop: 3 colunas
+  flex: 0 0 30%;
   max-width: 300px;
   text-align: center;
 
@@ -63,7 +63,6 @@ h1 {
   background-color: #007bff;
 }
 
-/* Tablet */
 @include responsive(tablet) {
   .carousel-slide {
     flex: 0 0 45%; 
@@ -75,7 +74,6 @@ h1 {
   }
 }
 
-/* Mobile */
 @include responsive(mobile) {
   .carousel-track {
     flex-wrap: nowrap;

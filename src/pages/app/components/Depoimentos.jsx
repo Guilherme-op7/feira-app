@@ -12,9 +12,8 @@ export function Depoimentos() {
       texto: (
         <>
           Atualmente, além de executivo de TI, sou professor no Instituto, onde nossa{" "}
-          <strong style={{ color: "white" }}>MISSÃO</strong> é  <strong style={{ color: "white" }}> EDUCAR, PREPARAR OS JOVENS PARA O MERCADO DE TRABALHO
-          </strong>, com habilidades técnicas, humanas e conceituais.
-          .
+          <strong style={{ color: "white" }}>MISSÃO</strong> é  
+          <strong style={{ color: "white" }}> EDUCAR, PREPARAR OS JOVENS PARA O MERCADO DE TRABALHO</strong>.
         </>
       ),
       estilo: { height: "418px", width: "301px" }
@@ -27,15 +26,10 @@ export function Depoimentos() {
         <>
           Cursei <strong style={{ color: "white" }}>Comunicação Visual no Frei</strong> e, ainda no ano letivo,
           <strong style={{ color: "white" }}> consegui um emprego pela Conexão Trabalho</strong>.
-          Com apoio da <strong style={{ color: "white" }}>Cássia</strong>, do professor<strong style={{ color: "white" }}> Natan</strong> e de toda a equipe,
-          fui aprovado na entrevista. No fim do curso, percebi minha afinidade com a área e decidi seguir carreira em
-          <strong style={{ color: "white" }}> Design Gráfico</strong>, planejando ingressar na faculdade.
         </>
-
       ),
       estilo: { height: "418px", width: "301px" }
     },
-
   ];
 
   useEffect(() => {
@@ -52,8 +46,7 @@ export function Depoimentos() {
     <div className="depoimentos-mom">
       <h1 id="depoimentos" className="depoimentos-text-principal">Depoimentos</h1>
       <h2 className="depoimentos-text-subprincipal">
-        Conheça as histórias de sucesso de quem transformou sua vida
-        profissional <br /> conosco
+        Conheça as histórias de sucesso de quem transformou sua vida profissional <br /> conosco
       </h2>
 
       <div className="depoimentos-carousel">
@@ -67,9 +60,7 @@ export function Depoimentos() {
               />
             </div>
             <div className="depoimentos1-conteudo">
-              <p className="depoimentos1-text1">
-                {depoimentoAtual.texto}
-              </p>
+              <p className="depoimentos1-text1">{depoimentoAtual.texto}</p>
               <p className="depoimentos1-text2">
                 <strong style={{ color: 'white' }}>
                   {depoimentoAtual.nome} - {depoimentoAtual.curso}
@@ -91,6 +82,6 @@ export function Depoimentos() {
       </div>
     </div>
   );
-};
+}
 
 export default Depoimentos;

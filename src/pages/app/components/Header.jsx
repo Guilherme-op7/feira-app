@@ -1,6 +1,12 @@
-import { Link } from "react-router";
+import { useState } from "react";
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header id="inicio" className="container">
       <div>
@@ -10,20 +16,28 @@ export function Header() {
           alt="logo do frei"
         />
       </div>
-      <div className="navegation">
-        <nav>
-          <ul className="list">
-            <li><a href="inicio">inicio</a></li>
-            <li><a href="#programa">programação</a></li>
-            <li><a href="#cursos">cursos</a></li>
-            <li><a href="#formulario">inscrição</a></li>
-            <li><a href="#contato">contato</a></li>
-          </ul>
-        </nav>
-      </div>
-     
+
+      <button
+        className={`hamburguer ${menuOpen ? "active" : ""}`}
+        onClick={toggleMenu}
+        aria-label="Abrir menu"
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <nav className={`navegation ${menuOpen ? "open" : ""}`}>
+        <ul className="list">
+          <li><a href="#inicio" onClick={toggleMenu}>início</a></li>
+          <li><a href="#programa" onClick={toggleMenu}>programação</a></li>
+          <li><a href="#cursos" onClick={toggleMenu}>cursos</a></li>
+          <li><a href="#formulario" onClick={toggleMenu}>inscrição</a></li>
+          <li><a href="#contato" onClick={toggleMenu}>contato</a></li>
+        </ul>
+      </nav>
     </header>
   );
-};
+}
 
 export default Header;
