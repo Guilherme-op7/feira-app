@@ -68,3 +68,5 @@ export function Parceiros() {
     </div>
   );
 }
+
+export default Parceiros
