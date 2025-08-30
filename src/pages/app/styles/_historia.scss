@@ -38,6 +38,8 @@
   flex: 1;
   display: flex;
   justify-content: flex-start;
+  align-items: flex-start;
+  position: relative; 
 
   @include responsive(mobile) {
     width: 100%;
@@ -45,29 +47,76 @@
     padding: 0 10px;        
     margin: 0;        
   }
+
+  .Xavier {
+    width: 635px;
+    height: auto;
+    max-width: 100%; 
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    @include responsive(tablet) {
+      width: 450px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    @include responsive(mobile) {
+      width: 100%;        
+      max-width: 100%;    
+      height: auto;       
+    }
+  }
+
+  .botao-hover {
+    position: absolute; 
+    bottom: 20px;     
+    left: 290px;       
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: $accent-color;
+    color: $white;
+    box-shadow: 1px 2px 6px black;
+    transition: 0.3s;
+
+
+    animation: pulse 2s infinite;
+
+    &:hover {
+      background: darken($accent-color, 10%);
+      transform: translateY(-3px);
+      box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    @include responsive(mobile) {
+      bottom: 10px;
+      left: 10px;
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
 }
 
-.Xavier {
-  width: 635px;
-  height: auto;
-  max-width: 100%; 
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.02);
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(224, 90, 43, 0.5);
   }
-
-  @include responsive(tablet) {
-    width: 450px;
-    max-width: 100%;
-    height: auto;
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(224, 90, 43, 0.8);
   }
-
-  @include responsive(mobile) {
-    width: 100%;        
-    max-width: 100%;    
-    height: auto;       
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(224, 90, 43, 0.5);
   }
 }
 

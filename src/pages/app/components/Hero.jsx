@@ -6,7 +6,7 @@ export function hero(){
 
       <div>
         <img
-          className="frei-logo2"
+          className="frei-logo22"
           src="/assets/images/selo.png"
           alt="logo do frei"
         />

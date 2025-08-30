@@ -1,3 +1,5 @@
+import '../styles/_historia.scss'
+
 export function Historia() {
   return (
     <div id="sobre" className="history">
@@ -15,15 +17,22 @@ export function Historia() {
           <span className="highlight"> competitividade.</span>
         </p>
 
-        <button><a className="ancoragem1" href="https://www.acaonsfatima.org.br/" target="blank">Conheça nosso Site!</a></button>
+        <button>
+          <a className="ancoragem1" href="https://www.acaonsfatima.org.br/" target="blank">
+            Conheça nosso Site!
+          </a>
+        </button>
       </div>
-      <div className="image-container">
-        <img
-          className="Xavier"
-          src="/assets/images/xavier.png"
-          alt="Fotografia do Frei Xavier fazendo uma palestra"
-        />
-      </div>
+
+<div className="image-container">
+  <img
+    className="Xavier"
+    src="/assets/images/xavier.png"
+    alt="Fotografia do Frei Xavier fazendo uma palestra"
+  />
+  <button className="botao-hover">Frei Xavier fundador do instituto</button>
+</div>
+
     </div>
   );
 };
