@@ -39,13 +39,18 @@ $shadow-dark: rgba(0, 0, 0, 0.2);
 
 @mixin responsive($breakpoint) {
   @if $breakpoint == tablet {
-    @media (max-width: 768px) { @content; }
+    @media (max-width: 920px) { @content; }
   }
 
   @if $breakpoint == mobile {
-    @media (max-width: 480px) { @content; }
+    @media (max-width: 600px) { @content; }
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 .pagina-app {
   background: linear-gradient(#E0F5FA, #B3D2FF);

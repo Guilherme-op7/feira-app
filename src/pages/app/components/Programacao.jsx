@@ -3,89 +3,57 @@ import '../styles/_programacao.scss';
 
 export function Programacao() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [slidesPerPage, setSlidesPerPage] = useState(window.innerWidth <= 768 ? 1 : 2);
 
   const programacaoData = [
-    {
-      local: "Pátio",
-      atividades: [
-        "Estandes de empresas convidadas",
-        "Casa da Mulher Paulistana",
-        "Conexão Bem Maior",
-        "Óticas Carol",
-        "STB"
-      ]
-    },
-    {
-      local: "Demais estandes",
-      atividades: [
-        "CEDESP AVE MARIA",
-        "Metalmecânica - Ajustador e Torneiro Mecânico",
-        "Tecnologia de Redes e Manutenção de Computadores",
-        "Troca de Livros",
-        
-      ]
-    },
-    {
-      local: "Salas",
-      atividades: [
-        "Sala 4: Óticas Carol",
-        "Sala 5: Caixa",
-        "Sala 6: Inglês",
-      ]
-    },
-    {
-      local: "Primeiro Andar",
-      atividades: [
-        "Sala 18 - Administração: Empreendedorismo e Logistica",
-        "Sala 19 - CREAS",
-        "Sala 20 - Administração: Recursos Humanos, Contabilidade e Documentos Técnicos"
-      ]
-    },
-    {
-      local: "Segundo Andar",
-      atividades: [
-        "Sala 24 - Comunicação Visual: Corel Draw, Photoshop e Caricaturas",
-        "Sala 25 - Informática: montagem, configuração e redes",
-        "Sala 26 - Informática: programação",
-        "Sala 27 - Elaboração de currículo"
-      ]
-    },
-        {
-      local: "Terceiro Andar - Auditório",
-      atividades: [
-        "Simulação de entrevista de emprego",
-        "Oficina de Linkedin"
-      ]
-    },
+    { local: "Pátio", atividades: ["Estandes de empresas convidadas", "Casa da Mulher Paulistana", "Conexão Bem Maior", "Óticas Carol", "STB", "PWI Sistemas", "Biscoitê", "APS", "São Paulo Open Centre", "SEBO e Troca de Livros", "Oficina de Eletrotécnica", "Oficina de Auto Elétrica de Autos"] },
+
+    { local: "Demais estandes", atividades: ["CEDESP AVE MARIA", "Metalmecânica - Ajustador e Torneiro Mecânico", "Tecnologia de Redes e Manutenção de Computadores", "Troca de Livros"] },
+
+    { local: "Salas", atividades: ["Sala 4: Óticas Carol - Exame de Vista gratuito", "Sala 6: Inglês"] },
+
+    { local: "Primeiro Andar", atividades: ["Sala 18 - Administração: Empreendedorismo e Logistica", "Sala 19 - CREAS", "Sala 20 - Administração: Recursos Humanos, Contabilidade e Documentos Técnicos"] },
+
+    { local: "Segundo Andar", atividades: ["Sala 24 - Comunicação Visual: CorelDRAW, Photoshop", "Sala 25 - Informática: montagem, configuração e redes", "Sala 26 - Informática: programação", "Sala 27 - Elaboração de currículo"] },
+    
+    { local: "Terceiro Andar - Auditório", atividades: ["CEDESP Ave Maria", "CATE - Conhecimento sobre Mercado de Emprego","Simulação de entrevista de emprego", "ADE SAMPA", "Oficina de Linkedin"] },
   ];
 
-  const totalSlides = Math.ceil(programacaoData.length / 2);
-
   useEffect(() => {
+    const handleResize = () => {
+      setSlidesPerPage(window.innerWidth <= 768 ? 1 : 2);
+      setCurrentSlide(0);
+    };
+
+    window.addEventListener('resize', handleResize);
+
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+      setCurrentSlide(prev => (prev + 1) % Math.ceil(programacaoData.length / slidesPerPage));
     }, 5000);
-    return () => clearInterval(interval);
-  }, [totalSlides]);
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearInterval(interval);
+    };
+  }, [slidesPerPage, programacaoData.length]);
 
-  const startIndex = currentSlide * 2;
-  const visibleCards = programacaoData.slice(startIndex, startIndex + 2);
+  const totalSlides = Math.ceil(programacaoData.length / slidesPerPage);
+  const startIndex = currentSlide * slidesPerPage;
+  const visibleCards = programacaoData.slice(startIndex, startIndex + slidesPerPage);
+
+  const goToSlide = (index) => setCurrentSlide(index);
 
   return (
-    <div className="Program">
-      <div id="programa"className="program-header">
+    <div className="Programacao">
+      <div id="programa" className="programacao-header">
         <h1>Programação por Local</h1>
-        <div className="linha-divisoria1"></div>
+        <div className="linha-divisoria22"></div>
       </div>
 
-      <div className="carousel-slide">
+      <div className="programacao-container">
         {visibleCards.map((item, index) => (
-          <div className="program-card" key={index}>
-            <h1>{item.local}</h1>
+          <div className="program-card-slide" key={index}>
+            <h2>{item.local}</h2>
             <ul>
               {item.atividades.map((atividade, i) => (
                 <li key={i}>{atividade}</li>
@@ -95,7 +63,7 @@ export function Programacao() {
         ))}
       </div>
 
-      <div className="carousel-indicators22">
+      <div className="programacao-indicators">
         {Array.from({ length: totalSlides }).map((_, idx) => (
           <span
             key={idx}
@@ -105,7 +73,9 @@ export function Programacao() {
         ))}
       </div>
 
-      <button className="Inscricao2"><a className="ancoragem" href="#formulario">Se inscreva agora!</a></button>
+      <button className="inscricao-btn">
+        <a href="#formulario" className="ancoragem">Se inscreva agora!</a>
+      </button>
     </div>
   );
 }

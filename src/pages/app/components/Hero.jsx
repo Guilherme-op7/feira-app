@@ -3,6 +3,14 @@ export function hero(){
   return (
     <div className="TL-inicial">
       <div className="conteudo">
+
+      <div>
+        <img
+          className="frei-logo2"
+          src="/assets/images/selo.png"
+          alt="logo do frei"
+        />
+      </div>
         <h1>
           Descubra seu <span className="highlight1">futuro</span> na <br />
           <span className="highlight1"> 5ª</span> Feira das Profissões <br /> 2025!

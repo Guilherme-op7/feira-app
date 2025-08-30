@@ -1,9 +1,12 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
+import { FaInstagram, FaWhatsapp, FaPhone } from "react-icons/fa";
+import "../styles/_footer.scss";
 
 export function Footer() {
   return (
     <footer className="rodape">
       <div id="contato" className="conteudo-rodape">
+
         <div className="coluna-rodape2">
           <img
             src="/assets/images/frei.jpg"
@@ -17,12 +20,11 @@ export function Footer() {
             <div className="linha-divisoria"></div>
             <p className="slogan">
               Descubra seu <span className="destaque">futuro</span> na Feira das <br />
-              Profissões 2025 — conecte-se <br /> com o <span className="destaque"> mercado</span> e encontre o <br /> caminho
+              Profissões 2025 — conecte-se <br /> com o <span className="destaque">mercado</span> e encontre o <br /> caminho
               ideal para sua carreira!
             </p>
           </div>
         </div>
-
 
         <div className="coluna-rodape">
           <h3 className="titulo-secao">Horários e Endereço</h3>
@@ -40,21 +42,10 @@ export function Footer() {
           <h3 className="titulo-secao">Links Rápidos</h3>
           <div className="linha-divisoria"></div>
           <ul className="menu-rodape">
-            <li>
-              <a href="#inicio">Início</a>
-            </li>
-            <li>
-              <a href="#sobre">Sobre</a>
-            </li>
-            <li>
-              <a href="#cursos">Nossos Cursos</a>
-            </li>
-            <li>
-              <a href="#depoimentos">Depoimentos</a>
-            </li>
-            <li>
-              <a href="#contato">Contato</a>
-            </li>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
           </ul>
         </div>
 
@@ -67,6 +58,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <FaInstagram style={{ marginRight: "8px" }} />
               @institutonsfatima
             </a>
           </p>
@@ -76,31 +68,32 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <FaWhatsapp style={{ marginRight: "8px" }} />
               (11) 96398-6252 - WhatsApp
             </a>
           </p>
           <p className="telefone">
-            <a href="tel:+551137985037">(11) 3798-5037 - Secretaria</a>
+            <a href="tel:+551137985037">
+              <FaPhone style={{ marginRight: "8px" }} />
+              (11) 3798-5037 - Secretaria
+            </a>
           </p>
         </div>
       </div>
 
       <div className="rodape-final">
         <p className="direitos-autorais">
-          © 2025 Todos os direitos reservados - Instituto Social Nossa Senhora
-          de Fátima.
+          © 2025 Todos os direitos reservados - Instituto Social Nossa Senhora de Fátima.
         </p>
       </div>
 
-        <div className="acesso">
-       <Link to="/painelAdmin">
+      <div className="acesso">
+        <Link to="/painelAdmin">
           <button className="Adm">Acesso Administrativo</button>
         </Link>
       </div>
     </footer>
-
-    
   );
-};
+}
 
 export default Footer;

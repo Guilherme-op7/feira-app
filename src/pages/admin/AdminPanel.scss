@@ -6,7 +6,7 @@
   .admin-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;   
     padding: 15px 30px;
     border-bottom: 1px solid #ccc;
 
@@ -51,37 +51,67 @@
     }
   }
 
+
   .tabs {
-    display: flex;
-    justify-content: center;
-    margin: 25px auto;
-    background: #fff;
+  display: flex;
+  justify-content: center;
+  margin: 25px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  overflow: hidden;
+
+  button {
+    flex: 1; 
+    padding: 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
     border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 60%;
+    transition: 0.2s;
+    white-space: nowrap;
 
-    button {
-      flex: 1;
-      padding: 12px;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 12px;
-      transition: 0.2s;
-
-      &.active {
-        background: #d6e8f9;
-        font-weight: bold;
-      }
+    &.active {
+      background: #d6e8f9;
+      font-weight: bold;
     }
   }
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+    button {
+      flex: 0 0 auto;
+      margin-right: 10px;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.2);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.05);
+    }
+  }
+}
 
   .content-box {
     background: #fff;
     margin: 0 auto;
-    padding: 25px;
-    width: 60%;
+    padding: 28px;
+    width: 70%;
     border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 
@@ -96,13 +126,16 @@
         padding: 10px;
         border-radius: 6px;
         border: 1px solid #ccc;
+        box-sizing: border-box;
       }
     }
 
     .formulario {
+      width: 100%;
       max-width: 400px;
       margin: 0 auto;
       text-align: center;
+      padding: 0 10px;
 
       h2 {
         margin-bottom: 5px;
@@ -124,11 +157,14 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
+        width: 100%;
 
         input {
           padding: 10px;
           border-radius: 6px;
           border: 1px solid #ccc;
+          width: 100%;
+          box-sizing: border-box;
         }
 
         button {
@@ -140,12 +176,102 @@
           border-radius: 6px;
           cursor: pointer;
           transition: 0.2s;
+          width: 100%;
+          box-sizing: border-box;
 
           &:hover {
             background: #333;
           }
         }
       }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .tabs,
+    .content-box {
+      width: 80%;
+    }
+
+    .admin-header {
+      padding: 15px 20px;
+
+      .btn-voltar {
+        padding: 6px 30px;
+        font-size: 17px;
+        margin-right: 10px;
+      }
+
+      .logo-area h1 {
+        font-size: 28px;
+      }
+
+      .logo-area span {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .admin-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+
+      .btn-voltar {
+        align-self: flex-end;
+      }
+    }
+
+    .tabs,
+    .content-box {
+      width: 95%;
+    }
+
+    .formulario h2 {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .admin-header {
+      padding: 10px 15px;
+
+      .logo-area img {
+        width: 100px;
+        height: auto;
+      }
+
+      .logo-area h1 {
+        font-size: 24px;
+      }
+
+      .logo-area span {
+        font-size: 16px;
+      }
+
+      .btn-voltar {
+        padding: 6px 20px;
+        font-size: 16px;
+      }
+    }
+
+    .tabs button {
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .formulario h2 {
+      font-size: 24px;
+    }
+
+    .formulario p {
+      font-size: 13px;
+    }
+
+    .formulario input,
+    .formulario button {
+      padding: 8px;
     }
   }
 }

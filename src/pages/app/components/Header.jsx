@@ -12,7 +12,7 @@ export function Header() {
       <div>
         <img
           className="frei-logo"
-          src="/assets/images/feira.png"
+          src="/assets/images/frei.jpg"
           alt="logo do frei"
         />
       </div>
@@ -31,7 +31,6 @@ export function Header() {
         <ul className="list">
           <li><a href="#inicio" onClick={toggleMenu}>início</a></li>
           <li><a href="#programa" onClick={toggleMenu}>programação</a></li>
-          <li><a href="#cursos" onClick={toggleMenu}>cursos</a></li>
           <li><a href="#formulario" onClick={toggleMenu}>inscrição</a></li>
           <li><a href="#contato" onClick={toggleMenu}>contato</a></li>
         </ul>

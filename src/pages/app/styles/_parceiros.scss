@@ -23,22 +23,26 @@ h1 {
   margin: 0 auto 30px;
 }
 
+.carousel-viewport {
+  width: 100%;
+  max-width: 960px;
+  overflow: hidden;
+}
+
 .carousel-track {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  width: 100%;
+  transition: transform 0.6s ease-in-out;
 }
 
 .carousel-slide {
-  flex: 0 0 28%;
-  max-width: 280px;
-  text-align: center;
+  flex: 0 0 305px;
+  max-width: 305px;
+  height: 181px;
+  margin: 0 7.5px; 
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 12px;
     object-fit: cover;
   }
@@ -63,26 +67,14 @@ h1 {
   background-color: #007bff;
 }
 
-@include responsive(tablet) {
-  .carousel-slide {
-    flex: 0 0 45%; 
-    max-width: 250px;
-  }
-
-  h1 {
-    font-size: 42px;
-  }
-}
-
 @include responsive(mobile) {
-  .carousel-track {
-    flex-wrap: nowrap;
-    justify-content: center;
+  .carousel-viewport {
+    max-width: 305px; 
   }
 
   .carousel-slide {
-    flex: 0 0 90%; 
-    max-width: 90%;
+    flex: 0 0 305px;
+    margin: 0;
   }
 
   h1 {

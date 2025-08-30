@@ -2,10 +2,11 @@
 
 .history {
   display: flex;
-  margin: 90px 70px;
+  margin: 90px 40px; 
   padding: 40px;
   gap: 40px;
   align-items: center;
+  flex-wrap: wrap; 
 
   @include responsive(tablet) {
     flex-direction: column-reverse;
@@ -16,8 +17,8 @@
 
   @include responsive(mobile) {
     flex-direction: column-reverse;
-    margin: 30px 0; 
-    padding: 0;    
+    margin: 30px 10px; 
+    padding: 10px;    
     gap: 20px;
   }
 }
@@ -28,7 +29,7 @@
 
   @include responsive(mobile) {
     text-align: left; 
-    padding: 0;       
+    padding: 0 10px;       
     margin: 0;        
   }
 }
@@ -40,14 +41,16 @@
 
   @include responsive(mobile) {
     width: 100%;
-    padding: 0;        
-    margin-right: 0;        
+    justify-content: center;
+    padding: 0 10px;        
+    margin: 0;        
   }
 }
 
 .Xavier {
   width: 635px;
-  height: 591px;
+  height: auto;
+  max-width: 100%; 
   border-radius: 15px;
   transition: transform 0.3s ease;
 
@@ -57,7 +60,8 @@
 
   @include responsive(tablet) {
     width: 450px;
-    height: 420px;
+    max-width: 100%;
+    height: auto;
   }
 
   @include responsive(mobile) {
@@ -80,6 +84,7 @@
   @include responsive(mobile) {
     font-size: 24px;
     text-align: left;
+    word-wrap: break-word; 
   }
 }
 
@@ -98,6 +103,7 @@
   font-size: 30px;
   font-weight: 500;
   line-height: 1.7;
+  word-wrap: break-word; 
 
   @include responsive(tablet) {
     font-size: 20px;
@@ -108,7 +114,7 @@
     font-size: 16px;
     line-height: 1.5;
     text-align: left;
-    margin-right: 80px;
+    margin: 0 10px 0 0; 
   }
 
   .highlight {
@@ -138,6 +144,10 @@
   @include responsive(mobile) {
     font-size: 14px;
     padding: 6px 12px;
+    width: 100%; 
+    max-width: 300px; 
+    margin: 20px auto 0 auto; 
+    display: block;
   }
 
   &:hover {

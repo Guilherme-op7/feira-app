@@ -5,19 +5,18 @@ export function Depoimentos() {
   const [currentDepoimento, setCurrentDepoimento] = useState(0);
 
   const depoimentosData = [
-    {
-      nome: "Bruno de Oliveira",
-      curso: "Cursos de Informática 2005 e Inglês 2006",
-      foto: "/assets/images/bruno.png",
-      texto: (
-        <>
-          Atualmente, além de executivo de TI, sou professor no Instituto, onde nossa{" "}
-          <strong style={{ color: "white" }}>MISSÃO</strong> é  
-          <strong style={{ color: "white" }}> EDUCAR, PREPARAR OS JOVENS PARA O MERCADO DE TRABALHO</strong>.
-        </>
-      ),
-      estilo: { height: "418px", width: "301px" }
-    },
+{
+  nome: "Miguel Silva",
+  curso: "Comunicação Visual 2021 e Inglês 2021 - 2023",
+  foto: "/assets/images/miguel.png",
+  texto: (
+    <>
+      Técnico em <strong style={{ color: "white" }}>Comunicação Visual</strong> e Inglês nível B2 pelo  <strong style={{ color: "white" }}>Frei</strong>. Atualmente, formando em <strong style={{ color: "white" }}>Artes Visuais - Licenciatura</strong> e atuo como <strong style={{ color: "white" }}>professor eventual</strong> na rede estadual de São Paulo. O instituto foi um divisor de águas em minha trajetória.
+    </>
+  ),
+  estilo: { height: "418px", width: "301px" }
+},
+
     {
       nome: "Mateus Lemos",
       curso: "Curso de Comunicação Visual - 2024",

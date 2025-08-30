@@ -1,6 +1,6 @@
 import "./styles/main.scss";
 import {
-  Header, Hero, Instituto, Historia, Programacao, Cursos, Estrutura, Participar, Depoimentos, Momentos, ComoChegar, Footer, SaberMais,
+  Header, Hero, Instituto, Historia, Programacao, Estrutura, Participar, Depoimentos, Momentos, ComoChegar, Footer,
   Parceiros} from './components';
 
 export default function App() {
@@ -11,8 +11,6 @@ export default function App() {
       <Instituto />
       <Historia />
       <Programacao />
-      <Cursos />
-      <SaberMais />
       <Estrutura />
       <Participar />
       <Depoimentos />

@@ -1,6 +1,6 @@
 @import 'global';
 
-header.container232  {
+header.container232 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,21 +9,38 @@ header.container232  {
   background: #E0F5FA;
   backdrop-filter: blur(10px);
   position: relative;
-  z-index: 1000;
+  width: 100%;
 }
 
 .frei-logo {
-  width: 107px;
-  height: 112px;
+  width: 90px;
+  height: auto;
+  max-height: 90px;
+  object-fit: contain;
   transition: transform 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
   }
+
+  @include responsive(tablet) {
+    width: 70px;
+    max-height: 70px;
+  }
+
+  @include responsive(mobile) {
+    width: 60px;
+    max-height: 60px;
+  }
 }
 
 .hamburguer {
-  display: none; 
+  position: absolute;
+  right: 20px;
+  margin-bottom: 100px;
+  top: 20%;
+  transform: translateY(-50%);
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -50,6 +67,10 @@ header.container232  {
   &.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
+
+  @include responsive(tablet) {
+    display: flex;
+  }
 }
 
 .navegation {
@@ -75,12 +96,9 @@ header.container232  {
 }
 
 @include responsive(tablet) {
-  header.container2 {
+  header.container232 {
+    padding: 15px 20px;
     justify-content: space-between;
-  }
-
-  .hamburguer {
-    display: flex;
   }
 
   .navegation {
@@ -109,5 +127,20 @@ header.container232  {
     &.open {
       transform: translateX(0);
     }
+  }
+}
+
+@include responsive(mobile) {
+  header.container232 {
+    padding: 10px 15px;
+  }
+
+  .frei-logo {
+    width: 50px;
+    max-height: 50px;
+  }
+
+  .navegation ul.list li a {
+    font-size: 24px;
   }
 }
