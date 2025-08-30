@@ -2,11 +2,11 @@
 
 .history {
   display: flex;
-  margin: 90px 40px; 
-  padding: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start; 
   gap: 40px;
-  align-items: center;
-  flex-wrap: wrap; 
+  margin: 90px 40px;
+  padding: 40px;
 
   @include responsive(tablet) {
     flex-direction: column-reverse;
@@ -17,9 +17,99 @@
 
   @include responsive(mobile) {
     flex-direction: column-reverse;
-    margin: 30px 10px; 
-    padding: 10px;    
+    margin: 30px 10px;
+    padding: 10px;
     gap: 20px;
+  }
+
+  h2 {
+    color: $primary-color;
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0;
+
+    @include responsive(tablet) {
+      font-size: 28px;
+    }
+
+    @include responsive(mobile) {
+      font-size: 24px;
+      text-align: left;
+      word-wrap: break-word;
+    }
+  }
+
+  .linha-divisoria {
+    width: 60px;
+    height: 3px;
+    background: $accent-color;
+    margin: 15px 0;
+
+    @include responsive(mobile) {
+      margin: 10px 0;
+    }
+  }
+
+  p {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.7;
+    word-wrap: break-word;
+
+    @include responsive(tablet) {
+      font-size: 20px;
+      text-align: left;
+    }
+
+    @include responsive(mobile) {
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: left;
+      margin: 0 10px 0 0;
+    }
+
+    .highlight {
+      color: $accent-color;
+      font-weight: bold;
+    }
+  }
+
+  button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: #E05A2BF2;
+    border: none;
+    border-radius: 15px;
+    color: $white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 1px 2px 6px black;
+    font-size: 18px;
+
+    @include responsive(tablet) {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+
+    @include responsive(mobile) {
+      font-size: 14px;
+      padding: 6px 12px;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto 0 auto;
+      display: block;
+    }
+
+    &:hover {
+      background: #e64a19;
+      transform: translateY(-2px);
+    }
+  }
+
+  .ancoragem1 {
+    color: white;
+    text-decoration: none;
   }
 }
 
@@ -28,30 +118,22 @@
   text-align: left;
 
   @include responsive(mobile) {
-    text-align: left; 
-    padding: 0 10px;       
-    margin: 0;        
+    padding: 0 10px;
   }
 }
 
 .image-container {
   flex: 1;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative; 
-
-  @include responsive(mobile) {
-    width: 100%;
-    justify-content: center;
-    padding: 0 10px;        
-    margin: 0;        
-  }
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
 
   .Xavier {
-    width: 635px;
+    width: 100%;
+    max-width: 635px;
     height: auto;
-    max-width: 100%; 
     border-radius: 15px;
     transition: transform 0.3s ease;
 
@@ -60,22 +142,17 @@
     }
 
     @include responsive(tablet) {
-      width: 450px;
-      max-width: 100%;
-      height: auto;
+      max-width: 450px;
     }
 
     @include responsive(mobile) {
-      width: 100%;        
-      max-width: 100%;    
-      height: auto;       
+      max-width: 100%;
     }
   }
 
   .botao-hover {
-    position: absolute; 
-    bottom: 20px;     
-    left: 290px;       
+    position: relative;
+    margin-top: 10px;
     border: none;
     border-radius: 25px;
     padding: 12px 25px;
@@ -86,8 +163,6 @@
     color: $white;
     box-shadow: 1px 2px 6px black;
     transition: 0.3s;
-
-
     animation: pulse 2s infinite;
 
     &:hover {
@@ -97,10 +172,9 @@
     }
 
     @include responsive(mobile) {
-      bottom: 10px;
-      left: 10px;
       font-size: 14px;
       padding: 10px 20px;
+      width: auto;
     }
   }
 }
@@ -118,94 +192,4 @@
     transform: scale(1);
     box-shadow: 0 0 10px rgba(224, 90, 43, 0.5);
   }
-}
-
-.history h2 {
-  color: $primary-color;
-  font-size: 42px;
-  font-weight: 700;
-  margin: 0;        
-
-  @include responsive(tablet) {
-    font-size: 28px;
-  }
-
-  @include responsive(mobile) {
-    font-size: 24px;
-    text-align: left;
-    word-wrap: break-word; 
-  }
-}
-
-.linha-divisoria {
-  width: 60px;
-  height: 3px;
-  background: $accent-color;
-  margin: 15px 0;
-
-  @include responsive(mobile) {
-    margin: 10px 0;
-  }
-}
-
-.history p {
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1.7;
-  word-wrap: break-word; 
-
-  @include responsive(tablet) {
-    font-size: 20px;
-    text-align: left;
-  }
-
-  @include responsive(mobile) {
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: left;
-    margin: 0 10px 0 0; 
-  }
-
-  .highlight {
-    color: $accent-color;
-    font-weight: bold;
-  }
-}
-
-.history button {
-  margin-top: 30px;
-  padding: 10px 20px;
-  background: #E05A2BF2;
-  border: none;
-  border-radius: 15px;
-  color: $white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 1px 2px 6px black;
-  font-size: 18px;
-
-  @include responsive(tablet) {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
-
-  @include responsive(mobile) {
-    font-size: 14px;
-    padding: 6px 12px;
-    width: 100%; 
-    max-width: 300px; 
-    margin: 20px auto 0 auto; 
-    display: block;
-  }
-
-  &:hover {
-    background: #e64a19;
-    transform: translateY(-2px);
-  }
-}
-
-.ancoragem1 {
-  color: white;
-  text-decoration: none;
 }

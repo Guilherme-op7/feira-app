@@ -1,4 +1,4 @@
-
+import '../styles/_hero.scss'
 export function hero(){
   return (
     <div className="TL-inicial">
@@ -6,7 +6,7 @@ export function hero(){
 
       <div>
         <img
-          className="frei-logo22"
+          className="frei-logo2"
           src="/assets/images/selo.png"
           alt="logo do frei"
         />
