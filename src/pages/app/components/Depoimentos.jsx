@@ -5,27 +5,44 @@ export function Depoimentos() {
   const [currentDepoimento, setCurrentDepoimento] = useState(0);
 
   const depoimentosData = [
-{
-  nome: "Miguel Silva",
-  curso: "Comunicação Visual 2021 e Inglês 2021 - 2023",
-  foto: "/assets/images/miguel.png",
-  texto: (
-    <>
-      Técnico em <strong style={{ color: "white" }}>Comunicação Visual</strong> e Inglês nível B2 pelo  <strong style={{ color: "white" }}>Frei</strong>. Atualmente, formando em <strong style={{ color: "white" }}>Artes Visuais - Licenciatura</strong> e atuo como <strong style={{ color: "white" }}>professor eventual</strong> na rede estadual de São Paulo. O instituto foi um divisor de águas em minha trajetória.
-    </>
-  ),
-  estilo: { height: "418px", width: "301px" }
-},
-
     {
-      nome: "Mateus Lemos",
-      curso: "Curso de Comunicação Visual - 2024",
-      foto: "https://static.wixstatic.com/media/5b91ad_20f508e9964242aaa8c01484174aaded~mv2.png/v1/crop/x_0,y_98,w_960,h_1085/fill/w_494,h_558,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Imagem%20do%20WhatsApp%20de%202024-11-19%20%C3%A0(s)%2010.png",
+      nome: "Miguel Silva",
+      curso: "Comunicação Visual 2021 e Inglês 2022 - 2023",
+      foto: "/assets/images/miguel.png",
       texto: (
         <>
-          Cursei <strong style={{ color: "white" }}>Comunicação Visual no Frei</strong> e, ainda no ano letivo,
-          <strong style={{ color: "white" }}> consegui um emprego pela Conexão Trabalho</strong>.
+          Técnico em <strong style={{ color: "white" }}>Comunicação Visual</strong> e Inglês nível B2 pelo  <strong style={{ color: "white" }}>Frei</strong>. Atualmente, formando em <strong style={{ color: "white" }}>Artes Visuais - Licenciatura</strong> e atuo como <strong style={{ color: "white" }}>professor eventual</strong> na rede estadual de São Paulo. O instituto foi um divisor de águas em minha trajetória.
         </>
+      ),
+      estilo: { height: "418px", width: "301px" }
+    },
+
+    {
+      nome: "Maria Eduarda Rodrigues da Silva",
+      curso: "Administração 2023 - Inglês Básico 2024",
+      foto: "/assets/images/maria.png",
+      texto: (
+        <>
+          Em 2023, fiz o curso de <strong style={{ color: "white" }}>Técnico em Administração</strong>, desenvolvendo trabalho em equipe e soluções.
+          Em 2024, curso <strong style={{ color: "white" }}>Inglês Básico</strong> e, graças ao desempenho, fui convidada a trabalhar no <strong style={{ color: "white" }}>Instituto</strong>.
+          <strong style={{ color: "white" }}>Maria Eduarda Rodrigues da Silva</strong> – Administração 2023 e Inglês Básico 2024
+        </>
+
+      ),
+      estilo: { height: "418px", width: "301px" }
+    },
+
+    {
+      nome: "Eric Alves Martins",
+      curso: "Eletrotécnica 2009 – Inglês 2015",
+      foto: "/assets/images/erik.png",
+      texto: (
+        <>
+          Fui aluno do <strong style={{ color: "white" }}>Frei</strong>, iniciando em 2009 no curso de <strong style={{ color: "white" }}>Eletrotécnica</strong> e, em 2010, no curso de <strong style={{ color: "white" }}>Engenharia Elétrica</strong>, onde assumi cargos de liderança.
+          Em 2018, fiz pós-graduação em <strong style={{ color: "white" }}>Gerenciamento de Projetos</strong> e, em 2021, fundei a empresa <strong style={{ color: "white" }}>Martins Metal</strong>, especializada em corte e dobra.
+        </>
+
+
       ),
       estilo: { height: "418px", width: "301px" }
     },
