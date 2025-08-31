@@ -49,7 +49,7 @@ export function Patrocinadores() {
           }}
         >
           {parceiros.map((parceiro) => (
-            <div key={parceiro.id} className="carousel-slide">
+            <div key={parceiro.id} className="carousel-slide2">
               <img src={parceiro.img} alt={parceiro.nome} loading="lazy" />
             </div>
           ))}
