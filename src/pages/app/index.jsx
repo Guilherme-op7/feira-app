@@ -1,7 +1,8 @@
 import "./styles/main.scss";
 import {
   Header, Hero, Instituto, Historia, Programacao, Estrutura, Participar, Depoimentos, Momentos, ComoChegar, Footer,
-  Parceiros} from './components';
+  Parceiros,
+  Patrocinadores} from './components';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Depoimentos />
       <Momentos />
       <ComoChegar />
+      <Patrocinadores />
       <Parceiros />
       <Footer />
     </div>
