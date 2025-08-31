@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { FaInstagram, FaWhatsapp, FaPhone } from "react-icons/fa";
+import LoginInterface from "../../admin/Login";
 import "../styles/_footer.scss";
 
 export function Footer() {
+  const [abrirLogin, setAbrirLogin] = useState(false);
+
   return (
     <footer className="rodape">
       <div id="contato" className="conteudo-rodape">
-
         <div className="coluna-rodape2">
           <img
             src="/assets/images/frei.jpg"
@@ -88,10 +90,18 @@ export function Footer() {
       </div>
 
       <div className="acesso">
-        <Link to="/painelAdmin">
-          <button className="Adm">Acesso Administrativo</button>
-        </Link>
+        <button className="Adm" onClick={() => setAbrirLogin(true)}>
+          Acesso Administrativo
+        </button>
       </div>
+
+      {abrirLogin && (
+        <div className="overlay">
+          <div className="modal-login">
+            <LoginInterface onClose={() => setAbrirLogin(false)} />
+          </div>
+        </div>
+      )}
     </footer>
   );
 }

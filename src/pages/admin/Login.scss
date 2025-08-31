@@ -3,6 +3,48 @@
   box-sizing: border-box;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-login {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 350px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.tela-login-adm {
+  .erro {
+    color: red;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+}
+
+
+.modal-login .fechar {
+  margin-top: 15px;
+  background: #c62828;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
 .tela-login-adm {
   width: 659px; 
   height: 676px;   
