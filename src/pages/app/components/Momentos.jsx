@@ -27,26 +27,26 @@ export function Momentos() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const calcularOffsets = () => {
-      if (wrapperRef.current) {
-        const children = Array.from(wrapperRef.current.children);
-        const novasOffsets = [];
-        let acumulado = 0;
+useEffect(() => {
+  const calcularOffsets = () => {
+    if (wrapperRef.current) {
+      const children = Array.from(wrapperRef.current.children);
+      const novasOffsets = [];
+      let acumulado = 0;
 
-        children.forEach((el) => {
-          novasOffsets.push(acumulado);
-          acumulado += el.offsetWidth + 10; // inclui a marginRight
-        });
+      children.forEach((el) => {
+        novasOffsets.push(acumulado);
+        acumulado += el.offsetWidth + 10;
+      });
 
-        setOffsets(novasOffsets);
-      }
-    };
+      setOffsets(novasOffsets);
+    }
+  };
 
-    calcularOffsets();
-    window.addEventListener("resize", calcularOffsets);
-    return () => window.removeEventListener("resize", calcularOffsets);
-  }, [fotos]);
+  calcularOffsets();
+  window.addEventListener("resize", calcularOffsets);
+  return () => window.removeEventListener("resize", calcularOffsets);
+}, []); 
 
   return (
     <div className="momentos-section">
