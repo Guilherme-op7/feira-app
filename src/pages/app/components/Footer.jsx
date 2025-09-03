@@ -11,7 +11,7 @@ export function Footer() {
       <div id="contato" className="conteudo-rodape">
         <div className="coluna-rodape2">
           <img
-            src="/assets/images/frei.jpg"
+            src="/assets/images/frei.png"
             alt="Logo Instituto"
             className="logo-instituto"
           />
