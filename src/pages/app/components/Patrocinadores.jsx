@@ -28,10 +28,12 @@ export function Patrocinadores() {
   const totalSlides = Math.ceil(parceiros.length / itemsPerSlide);
 
   useEffect(() => {
+    if (currentSlide >= totalSlides) setCurrentSlide(0);
+  }, [totalSlides, currentSlide]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) =>
-        prev + 1 < totalSlides ? prev + 1 : 0
-      );
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
     }, 8000);
     return () => clearInterval(interval);
   }, [totalSlides]);
@@ -47,10 +49,10 @@ export function Patrocinadores() {
         <div
           className="carousel-track"
           style={{
-            width: `${totalSlides * 100}%`,
-            transform: `translateX(-${currentSlide * (100 / totalSlides)}%)`,
+            display: "flex",
             transition: "transform 0.6s ease-in-out",
-            display: "flex"
+            width: `${(parceiros.length / itemsPerSlide) * 100}%`,
+            transform: `translateX(-${currentSlide * (100 / totalSlides)}%)`,
           }}
         >
           {parceiros.map((parceiro) => (
@@ -58,7 +60,7 @@ export function Patrocinadores() {
               key={parceiro.id}
               className="carousel-slide2"
               style={{
-                flex: `0 0 ${100 / itemsPerSlide}%` 
+                flex: `0 0 ${100 / itemsPerSlide}%`,
               }}
             >
               <img src={parceiro.img} alt={parceiro.nome} loading="lazy" />
