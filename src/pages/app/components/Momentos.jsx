@@ -19,7 +19,7 @@ export function Momentos() {
   const fecharImagem = () => setImagemSelecionada(null);
 
   const nextSlide = () => {
-    setIndice((prev) => (prev === fotos.length - 1 ? 3 : prev + 1));
+    setIndice((prev) => (prev === fotos.length - 1 ? 0 : prev + 1));
   };
 
   useEffect(() => {
@@ -28,18 +28,24 @@ export function Momentos() {
   }, []);
 
   useEffect(() => {
-    if (wrapperRef.current) {
-      const children = Array.from(wrapperRef.current.children);
-      const novasOffsets = [];
-      let acumulado = 0;
+    const calcularOffsets = () => {
+      if (wrapperRef.current) {
+        const children = Array.from(wrapperRef.current.children);
+        const novasOffsets = [];
+        let acumulado = 0;
 
-      children.forEach((el) => {
-        novasOffsets.push(acumulado);
-        acumulado += el.offsetWidth;
-      });
+        children.forEach((el) => {
+          novasOffsets.push(acumulado);
+          acumulado += el.offsetWidth + 10; // inclui a marginRight
+        });
 
-      setOffsets(novasOffsets);
-    }
+        setOffsets(novasOffsets);
+      }
+    };
+
+    calcularOffsets();
+    window.addEventListener("resize", calcularOffsets);
+    return () => window.removeEventListener("resize", calcularOffsets);
   }, [fotos]);
 
   return (
