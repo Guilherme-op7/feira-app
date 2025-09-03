@@ -15,14 +15,14 @@ export function Momentos() {
 
   const abrirImagem = (src) => setImagemSelecionada(src);
   const fecharImagem = () => setImagemSelecionada(null);
-  
-const nextSlide = () => {
-  setIndice((prev) => (prev === fotos.length - 1 ? 0 : prev + 1));
-};
+
+  const nextSlide = () => {
+    setIndice((prev) => (prev === fotos.length - 1 ? 0 : prev + 1));
+  };
 
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 4000);
+    const interval = setInterval(nextSlide, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -45,7 +45,7 @@ const nextSlide = () => {
             display: "flex",
             width: `${fotos.length * 100}%`,
             transition: "transform 0.5s ease",
-            transform: `translateX(-${(indice * 100) / fotos.length}%)`,
+            transform: `translateX(-${indice * 100}%)`,
           }}
         >
           {fotos.map((foto, i) => (
@@ -55,10 +55,11 @@ const nextSlide = () => {
               alt={`Foto ${i + 1}`}
               className="galeria-img"
               onClick={() => abrirImagem(`/assets/images/${foto}`)}
-              style={{ width: `${100 / fotos.length}%`, flexShrink: 0 }}
+              style={{ width: "100%", flexShrink: 0 }} 
             />
           ))}
         </div>
+
       </div>
 
       <button className="btn-participar">
