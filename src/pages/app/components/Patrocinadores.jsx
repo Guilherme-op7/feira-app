@@ -34,7 +34,7 @@ export function Patrocinadores() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 8000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [totalSlides]);
 

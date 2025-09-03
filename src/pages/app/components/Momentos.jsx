@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export function Momentos() {
   const [imagemSelecionada, setImagemSelecionada] = useState(null);
   const [indice, setIndice] = useState(0);
+  const wrapperRef = useRef(null);
+  const [offsets, setOffsets] = useState([]);
 
   const fotos = [
     "foto1.png",
@@ -17,14 +19,28 @@ export function Momentos() {
   const fecharImagem = () => setImagemSelecionada(null);
 
   const nextSlide = () => {
-    setIndice((prev) => (prev === fotos.length - 1 ? 0 : prev + 1));
+    setIndice((prev) => (prev === fotos.length - 1 ? 3 : prev + 1));
   };
-
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (wrapperRef.current) {
+      const children = Array.from(wrapperRef.current.children);
+      const novasOffsets = [];
+      let acumulado = 0;
+
+      children.forEach((el) => {
+        novasOffsets.push(acumulado);
+        acumulado += el.offsetWidth;
+      });
+
+      setOffsets(novasOffsets);
+    }
+  }, [fotos]);
 
   return (
     <div className="momentos-section">
@@ -41,11 +57,11 @@ export function Momentos() {
       >
         <div
           className="carrossel-wrapper"
+          ref={wrapperRef}
           style={{
             display: "flex",
-            width: `${fotos.length * 100}%`,
             transition: "transform 0.5s ease",
-            transform: `translateX(-${indice * 100}%)`,
+            transform: `translateX(-${offsets[indice] || 0}px)`,
           }}
         >
           {fotos.map((foto, i) => (
@@ -55,11 +71,15 @@ export function Momentos() {
               alt={`Foto ${i + 1}`}
               className="galeria-img"
               onClick={() => abrirImagem(`/assets/images/${foto}`)}
-              style={{ width: "100%", flexShrink: 0 }} 
+              style={{
+                flexShrink: 0,
+                height: "auto",
+                maxHeight: "400px",
+                marginRight: "10px",
+              }}
             />
           ))}
         </div>
-
       </div>
 
       <button className="btn-participar">

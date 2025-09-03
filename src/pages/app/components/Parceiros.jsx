@@ -12,6 +12,7 @@ export function Parceiros() {
     { id: 7, nome: "Parceiro 7", img: "/assets/images/Parceiros/parceiro7.png" },
     { id: 8, nome: "Parceiro 8", img: "/assets/images/Parceiros/parceiro8.png" },
     { id: 9, nome: "Parceiro 9", img: "/assets/images/Parceiros/parceiro9.png" },
+    { id: 10, nome: "Parceiro 10", img: "/assets/images/Parceiros/parceiro10.png" },
   ];
 
   const [isMobile, setIsMobile] = useState(false);
@@ -32,7 +33,7 @@ export function Parceiros() {
       setCurrentSlide(prev =>
         prev + 1 < totalSlides ? prev + 1 : 0
       );
-    }, 8000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [totalSlides]);
 
