@@ -72,7 +72,10 @@ export function Estrutura() {
               Oficinas Técnicas Especializadas
             </h1>
             <p>
-              <span className="highlight">Oficinas</span> equipadas para práticas em automação residencial, robótica, elétrica (auto elétrica), mecânica automotiva, tornearia e ajustagem mecânica.
+              <span className="highlight">Oficinas </span> 
+              equipadas para práticas em automação residencial, 
+              robótica, elétrica (auto elétrica), mecânica automotiva, tornearia e ajustagem mecânica 
+              contando com segurança e infraestrutura.
             </p>
           </div>
 
