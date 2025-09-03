@@ -69,12 +69,13 @@ export function Estrutura() {
               <span className="icon-wrapper">
                 <Building className="icon" />
               </span>
-               Oficinas de Mecânica e Tornearia
+              Oficinas Técnicas Especializadas
             </h1>
             <p>
-              <span className="highlight">Oficinas</span> totalmente equipadas para prática e aprendizado técnico.
+              <span className="highlight">Oficinas</span> equipadas para práticas em automação residencial, robótica, elétrica (auto elétrica), mecânica automotiva, tornearia e ajustagem mecânica.
             </p>
           </div>
+
         </div>
       </div>
     </div>

@@ -65,6 +65,7 @@
   @include responsive(tablet) {
     gap: 30px;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   @include responsive(mobile) {
@@ -84,10 +85,10 @@
   .carousel {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
 
     img {
-      width: 90%;
+      width: 100%;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 10px $shadow-dark;
