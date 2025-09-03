@@ -29,15 +29,14 @@ header.container232 {
   }
 
   @include responsive(mobile) {
-    width: 60px;
-    max-height: 60px;
+    width: 50px;
+    max-height: 50px;
   }
 }
 
 .hamburguer {
   position: absolute;
   right: 20px;
-  margin-bottom: 100px;
   top: 50%;
   transform: translateY(-50%);
   display: none;
@@ -70,6 +69,10 @@ header.container232 {
 
   @include responsive(tablet) {
     display: flex;
+  }
+
+  @include responsive(mobile) {
+    display: flex; 
   }
 }
 
@@ -138,6 +141,10 @@ header.container232 {
   .frei-logo {
     width: 50px;
     max-height: 50px;
+  }
+
+  .hamburguer {
+    display: flex;
   }
 
   .navegation ul.list li a {
