@@ -73,7 +73,7 @@ h1 {
 }
 
 @include responsive(mobile) {
-  .carousel-viewport {
+    .carousel-viewport {
     max-width: 305px; 
   }
 
@@ -82,7 +82,9 @@ h1 {
     margin: 0;
   }
 
-  h1 {
+  h1 { 
     font-size: 28px;
   }
+
+
 }

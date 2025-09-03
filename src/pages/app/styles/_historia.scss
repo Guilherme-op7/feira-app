@@ -103,7 +103,7 @@
 
     &:hover {
       background: #e64a19;
-      transform: translateY(-2px);
+
     }
   }
 
@@ -152,22 +152,22 @@
 
   .botao-hover {
     position: relative;
-    margin-top: 10px;
+    margin-top: -40px;
+    margin-right: -260px;
     border: none;
     border-radius: 25px;
     padding: 12px 25px;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
     background: $accent-color;
     color: $white;
     box-shadow: 1px 2px 6px black;
     transition: 0.3s;
-    animation: pulse 2s infinite;
+
 
     &:hover {
       background: darken($accent-color, 10%);
-      transform: translateY(-3px);
+
       box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
     }
 
@@ -176,20 +176,5 @@
       padding: 10px 20px;
       width: auto;
     }
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(224, 90, 43, 0.5);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(224, 90, 43, 0.8);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(224, 90, 43, 0.5);
   }
 }

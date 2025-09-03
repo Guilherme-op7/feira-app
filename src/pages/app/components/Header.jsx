@@ -12,7 +12,7 @@ export function Header() {
       <div>
         <img
           className="frei-logo"
-          src="/assets/images/frei.jpg"
+          src="/assets/images/frei.png"
           alt="logo do frei"
         />
       </div>
@@ -29,10 +29,10 @@ export function Header() {
 
       <nav className={`navegation ${menuOpen ? "open" : ""}`}>
         <ul className="list">
-          <li><a href="#inicio" onClick={toggleMenu}>início</a></li>
-          <li><a href="#programa" onClick={toggleMenu}>programação</a></li>
-          <li><a href="#formulario" onClick={toggleMenu}>inscrição</a></li>
-          <li><a href="#contato" onClick={toggleMenu}>contato</a></li>
+          <li><a href="#inicio" onClick={toggleMenu}>Início</a></li>
+          <li><a href="#programa" onClick={toggleMenu}>Programação</a></li>
+          <li><a href="#formulario" onClick={toggleMenu}>Inscrição</a></li>
+          <li><a href="#contato" onClick={toggleMenu}>Contato</a></li>
         </ul>
       </nav>
     </header>

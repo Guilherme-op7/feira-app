@@ -15,10 +15,11 @@ export function Momentos() {
 
   const abrirImagem = (src) => setImagemSelecionada(src);
   const fecharImagem = () => setImagemSelecionada(null);
+  
+const nextSlide = () => {
+  setIndice((prev) => (prev === fotos.length - 1 ? 0 : prev + 1));
+};
 
-  const nextSlide = () => {
-    setIndice((prev) => (prev === fotos.length - 1 ? 0 : prev + 1));
-  };
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 4000);

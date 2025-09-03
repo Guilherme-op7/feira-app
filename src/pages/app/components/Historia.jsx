@@ -27,10 +27,10 @@ export function Historia() {
 <div className="image-container">
   <img
     className="Xavier"
-    src="/assets/images/xavier.png"
+    src="/assets/images/xavier.jpg"
     alt="Fotografia do Frei Xavier fazendo uma palestra"
   />
-  <button className="botao-hover">Frei Xavier fundador do instituto</button>
+  <p className="botao-hover">Frei Xavier fundador do instituto</p>
 </div>
 
     </div>

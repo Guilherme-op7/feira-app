@@ -32,7 +32,7 @@ export function Parceiros() {
       setCurrentSlide(prev =>
         prev + 1 < totalSlides ? prev + 1 : 0
       );
-    }, 3000);
+    }, 8000);
     return () => clearInterval(interval);
   }, [totalSlides]);
 
