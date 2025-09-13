@@ -1,61 +1,102 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AdminPanel.scss";
 
 export default function AdminPanel() {
   const [activeTab, setActiveTab] = useState("visitantes");
 
+  const [busca, setBusca] = useState("");
+  const [visitantes, setVisitantes] = useState([]);
+
   const [FormularioD, setFormularioD] = useState({
     nome: "",
-    cpf: "",
-    exAluno: "",
-    escolaridade: "",
-    chegada: "",
-    email: "",
-    comoSoube: "",
     telefone: "",
+    email: "",
+    escola: "",
+    curso: "",
+    chegada: "",
+    comoSoube: "",
+    escolaridade: "",
+    exAluno: "",
+    cpf: "",
+    interesse: "",
   });
 
   const MudarCampo = (e) => {
     const { name, value } = e.target;
-    setFormularioD((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormularioD((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const validarFormulario = () => {
+    const { nome, cpf, exAluno } = FormularioD;
+    if (!nome.trim()) { alert("O campo Nome é obrigatório!"); return false; }
+    if (!cpf.trim()) { alert("O campo CPF é obrigatório!"); return false; }
+    if (!exAluno) { alert("Informe se você já foi aluno do Frei!"); return false; }
+    return true;
   };
 
   const EnviarFormulario = async (e) => {
     e.preventDefault();
+    if (!validarFormulario()) return;
 
-    alert("Formulário enviado!\n" + JSON.stringify(FormularioD, null, 2));
-    
     try {
-      await axios.post("#", FormularioD); 
+      await axios.post("http://localhost:5011/visitantes", FormularioD); 
       alert("Inscrição enviada com sucesso!");
-      
       setFormularioD({
         nome: "",
-        cpf: "",
-        exAluno: "",
-        escolaridade: "",
-        chegada: "",
-        email: "",
-        comoSoube: "",
         telefone: "",
+        email: "",
+        escola: "",
+        curso: "",
+        chegada: "",
+        comoSoube: "",
+        escolaridade: "",
+        exAluno: "",
+        cpf: "",
+        interesse: "",
       });
-    } 
-    catch (error) {
+    } catch (error) {
       console.error("Erro ao enviar:", error);
       alert("Erro ao enviar inscrição.");
     }
   };
 
+  useEffect(() => {
+    if (!busca.trim()) {
+      setVisitantes([]);
+      return;
+    }
+
+    const buscar = async () => {
+      try {
+        let response;
+        const apenasNumeros = busca.replace(/\D/g, "");
+
+        if (apenasNumeros.length === 11) {
+          response = await axios.get(`http://localhost:5011/visitantes/cpf/${apenasNumeros}`);
+        } 
+        
+        else {
+          response = await axios.get(`http://localhost:5011/visitantes/nome/${busca}`);
+        }
+
+        setVisitantes(Array.isArray(response.data) ? response.data : [response.data]);
+      } 
+      
+      catch {
+        setVisitantes([]);
+      }
+    };
+
+    buscar();
+  }, [busca]);
+
   return (
     <div className="admin-panel">
       <header className="admin-header">
         <div className="logo-area">
-          <img src="/assets/images/frei.jpg" alt="Logo Feira de Profissões" />
+          <img src="/assets/images/frei.png" alt="Logo Feira de Profissões" />
           <div>
             <h1>Painel Administrativo</h1>
             <span>Bem-vindo, Administrador</span>
@@ -89,18 +130,29 @@ export default function AdminPanel() {
             <h3>Gerenciar Visitantes</h3>
             <input
               type="text"
-              placeholder="Buscar por nome, email, cpf..."
+              placeholder="Buscar por nome ou CPF"
+              value={busca}
+              onChange={(e) => setBusca(e.target.value)}
             />
+
+            <div className="lista-visitantes">
+              {visitantes.map((v) => (
+                <div className="visitante-card" key={v.id}>
+                  <div className="visitante-info">
+                    <strong>{v.nm_cadastrado || v.nome}</strong>
+                    <span>{v.email_cadastrado || v.email}</span>
+                    <span>CPF: {v.cpf_cadastrado || v.cpf}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
         )}
 
         {activeTab === "credenciamento" && (
-          <div className="formulario">
-            <h2>
-              Formulário de <span>Inscrição</span>
-            </h2>
-            <p>Preencha o formulário abaixo</p>
-
+          <div id="formulario" className="comoChegar__formulario">
+            <h4>Formulário de <span>Inscrição</span></h4>
             <form onSubmit={EnviarFormulario}>
               <label>Nome Completo*</label>
               <input
