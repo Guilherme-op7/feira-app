@@ -5,9 +5,9 @@ import "./AdminPanel.scss";
 
 export default function AdminPanel() {
   const [activeTab, setActiveTab] = useState("visitantes");
-
   const [busca, setBusca] = useState("");
   const [visitantes, setVisitantes] = useState([]);
+  const [qrCodes, setQrCodes] = useState({});
 
   const [FormularioD, setFormularioD] = useState({
     nome: "",
@@ -23,25 +23,37 @@ export default function AdminPanel() {
     interesse: "",
   });
 
-  const MudarCampo = (e) => {
+  function MudarCampo(e) {
     const { name, value } = e.target;
-    setFormularioD((prev) => ({ ...prev, [name]: value }));
-  };
+    setFormularioD(prev => ({ ...prev, [name]: value }));
+  }
 
-  const validarFormulario = () => {
+  function validarFormulario() {
     const { nome, cpf, exAluno } = FormularioD;
-    if (!nome.trim()) { alert("O campo Nome é obrigatório!"); return false; }
-    if (!cpf.trim()) { alert("O campo CPF é obrigatório!"); return false; }
-    if (!exAluno) { alert("Informe se você já foi aluno do Frei!"); return false; }
-    return true;
-  };
 
-  const EnviarFormulario = async (e) => {
+    if (!nome.trim()) {
+      alert("O campo Nome é obrigatório!");
+      return false;
+    }
+    if (!cpf.trim()) {
+      alert("O campo CPF é obrigatório!");
+      return false;
+    }
+    if (!exAluno) {
+      alert("Informe se você já foi aluno do Frei!");
+      return false;
+    }
+
+    return true;
+  }
+
+  async function EnviarFormulario(e) {
     e.preventDefault();
+
     if (!validarFormulario()) return;
 
     try {
-      await axios.post("http://localhost:5011/visitantes", FormularioD); 
+      await axios.post("#", FormularioD);
       alert("Inscrição enviada com sucesso!");
       setFormularioD({
         nome: "",
@@ -60,7 +72,7 @@ export default function AdminPanel() {
       console.error("Erro ao enviar:", error);
       alert("Erro ao enviar inscrição.");
     }
-  };
+  }
 
   useEffect(() => {
     if (!busca.trim()) {
@@ -68,29 +80,80 @@ export default function AdminPanel() {
       return;
     }
 
-    const buscar = async () => {
+    async function buscar() {
       try {
         let response;
         const apenasNumeros = busca.replace(/\D/g, "");
 
         if (apenasNumeros.length === 11) {
           response = await axios.get(`http://localhost:5011/visitantes/cpf/${apenasNumeros}`);
-        } 
-        
-        else {
+        } else {
           response = await axios.get(`http://localhost:5011/visitantes/nome/${busca}`);
         }
 
         setVisitantes(Array.isArray(response.data) ? response.data : [response.data]);
-      } 
-      
-      catch {
+      } catch {
         setVisitantes([]);
       }
-    };
+    }
 
     buscar();
   }, [busca]);
+
+  async function AlternarQRCode(id_usuario) {
+    const qr = qrCodes[id_usuario]?.trim();
+    const visitante = visitantes.find(v => v.id === id_usuario);
+
+    if (visitante.qr_vinculado) {
+      try {
+        await axios.delete(`http://localhost:5011/vincular/${id_usuario}`);
+        alert("QR Code desvinculado com sucesso!");
+        setVisitantes(prev =>
+          prev.map(v => v.id === id_usuario ? { ...v, qr_vinculado: null } : v)
+        );
+      } catch (error) {
+        console.error("Erro ao desvincular QRCode:", error);
+        alert("Erro ao desvincular QRCode.");
+      }
+      return;
+    }
+
+    if (!qr) {
+      alert("Digite um QRCode válido antes de vincular!");
+      return;
+    }
+
+    if (isNaN(qr)) {
+      alert("O QRCode deve ser um número!");
+      return;
+    }
+
+    const usado = visitantes.find(v => v.qr_vinculado === qr);
+    if (usado) {
+      alert(`O QRCode ${qr} já está vinculado ao visitante ${usado.nm_cadastrado || usado.nome}`);
+      return;
+    }
+
+    try {
+      await axios.post("http://localhost:5011/vincular", {
+        id_usuario,
+        id_qrcode: parseInt(qr),
+      });
+
+      alert(`Visitante vinculado ao QRCode ${qr} com sucesso!`);
+
+      setQrCodes(prev => ({ ...prev, [id_usuario]: "" }));
+
+      setVisitantes(prev =>
+        prev.map(v => v.id === id_usuario ? { ...v, qr_vinculado: qr } : v)
+      );
+    } 
+    
+    catch (error) {
+      console.error("Erro ao vincular QRCode:", error);
+      alert("Erro ao vincular QRCode. Tente novamente.");
+    }
+  }
 
   return (
     <div className="admin-panel">
@@ -132,21 +195,43 @@ export default function AdminPanel() {
               type="text"
               placeholder="Buscar por nome ou CPF"
               value={busca}
-              onChange={(e) => setBusca(e.target.value)}
+              onChange={e => setBusca(e.target.value)}
             />
 
             <div className="lista-visitantes">
-              {visitantes.map((v) => (
+              {visitantes.map(v => (
                 <div className="visitante-card" key={v.id}>
                   <div className="visitante-info">
                     <strong>{v.nm_cadastrado || v.nome}</strong>
                     <span>{v.email_cadastrado || v.email}</span>
                     <span>CPF: {v.cpf_cadastrado || v.cpf}</span>
+
+                    {v.qr_vinculado ? (
+                      <div className="qr-vinculado">
+                        <span>QR: {v.qr_vinculado}</span>
+                        <button className="btn-vincular" onClick={() => AlternarQRCode(v.id)}>
+                          Desvincular
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="qr-input">
+                        <input
+                          type="text"
+                          placeholder="Digite o QRCode"
+                          value={qrCodes[v.id] || ""}
+                          onChange={e =>
+                            setQrCodes(prev => ({ ...prev, [v.id]: e.target.value }))
+                          }
+                        />
+                        <button className="btn-vincular" onClick={() => AlternarQRCode(v.id)}>
+                          Vincular
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
-
           </div>
         )}
 

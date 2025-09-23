@@ -1,31 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import './Login.scss';
 
 export default function LoginInterface({ onClose }) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState("");
+  const [carregando, setCarregando] = useState(false);
   const navigate = useNavigate();
-
-  const loginCorreto = {
-    email: "admin@teste.com",
-    senha: "123456"
-  };
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    if (email === loginCorreto.email && senha === loginCorreto.senha) {
-
-      navigate("/painelAdmin");
-    } 
-    
-    else {
-
-      setErro("E-mail ou senha incorretos!");
-    }
-  }
 
   return (
     <div className="tela-login-adm">
@@ -33,16 +16,49 @@ export default function LoginInterface({ onClose }) {
         <img src="/assets/images/selo.png" alt="Logo Feira de Profissões" />
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={async (e) => {
+          e.preventDefault();
+          setErro("");
+          setCarregando(true);
+
+          try {
+            const resposta = await axios.post("http://localhost:4000/login", {
+              email,
+              senha,
+            });
+
+            const { token, usuario } = resposta.data;
+            const usuarioComAdmin = { ...usuario, isAdmin: usuario.tipo === "admin" };
+
+            localStorage.setItem("token", token);
+            localStorage.setItem("usuario", JSON.stringify(usuarioComAdmin));
+
+            if (usuario.tipo === "admin") {
+              navigate("/painelAdmin");
+            } 
+            
+            else {
+              navigate("/");
+            }
+          } catch (err) {
+            console.error("Erro no login:", err);
+            setErro("E-mail ou senha incorretos!");
+          } finally {
+            setCarregando(false);
+          }
+        }}
+      >
         <div className='container2'>
           <label>E-mail de Acesso</label>
           <input
             className='email'
-            type="text"
+            type="email"
             placeholder="Seu Email de acesso"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            disabled={carregando}
           />
           <label>Senha</label>
           <input
@@ -52,14 +68,28 @@ export default function LoginInterface({ onClose }) {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
             required
+            disabled={carregando}
           />
         </div>
 
         {erro && <p className="erro">{erro}</p>}
 
         <div className='button'>
-          <button className='acessar' type="submit">Acessar Sistema</button>
-          <button className='voltar' type="button" onClick={onClose}>Voltar</button>
+          <button 
+            className='acessar' 
+            type="submit"
+            disabled={carregando || !email || !senha}
+          >
+            {carregando ? "Entrando..." : "Acessar Sistema"}
+          </button>
+          <button 
+            className='voltar' 
+            type="button" 
+            onClick={onClose}
+            disabled={carregando}
+          >
+            Voltar
+          </button>
         </div>
       </form>
     </div>
